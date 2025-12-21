@@ -43,6 +43,11 @@ CREATE TABLE IF NOT EXISTS figure (
   caption     TEXT NOT NULL,
   page        INTEGER,
   source_file TEXT,
+
+  image_path   TEXT,
+  image_mime   TEXT,
+  image_sha256 TEXT,
+
   created_at  TEXT NOT NULL DEFAULT (datetime('now')),
   updated_at  TEXT NOT NULL DEFAULT (datetime('now')),
   CONSTRAINT uq_figure_number UNIQUE (number)
@@ -70,6 +75,11 @@ CREATE TABLE IF NOT EXISTS map (
   caption     TEXT NOT NULL,
   page        INTEGER,
   source_file TEXT,
+
+  image_path   TEXT,
+  image_mime   TEXT,
+  image_sha256 TEXT,
+
   created_at  TEXT NOT NULL DEFAULT (datetime('now')),
   updated_at  TEXT NOT NULL DEFAULT (datetime('now')),
   CONSTRAINT uq_map_number UNIQUE (number)
@@ -97,6 +107,11 @@ CREATE TABLE IF NOT EXISTS plate (
   caption     TEXT NOT NULL,
   page        INTEGER,
   source_file TEXT,
+
+  image_path   TEXT,
+  image_mime   TEXT,
+  image_sha256 TEXT,
+
   created_at  TEXT NOT NULL DEFAULT (datetime('now')),
   updated_at  TEXT NOT NULL DEFAULT (datetime('now')),
   CONSTRAINT uq_plate_number UNIQUE (number)

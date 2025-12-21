@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import hashlib
 
 from .db import connect
 
@@ -17,6 +18,34 @@ def read_jsonl(path: Path) -> list[dict]:
                 continue
             records.append(json.loads(ln))
     return records
+
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def image_info_for(kind: str, raw_dir: Path, number: int) -> tuple[str | None, str | None, str | None]:
+    """
+    kind: "figure" | "map" | "plate"
+    raw_dir: e.g. data/raw/figures
+    number: e.g. 50
+
+    returns (relative_path, mime, sha256) or (None, None, None) if file does not exist
+    """
+    prefix = {"figure": "fig", "map": "map", "plate": "plate"}[kind]
+    filename = f"{prefix}_{number:03d}.png"
+    abs_path = raw_dir / filename
+    if not abs_path.exists():
+        return None, None, None
+
+    # Store relative path (portable inside repo)
+    rel_path = str(abs_path.as_posix())
+    mime = "image/png"
+    digest = sha256_file(abs_path)
+    return rel_path, mime, digest
 
 
 def upsert_village(con, name: str, code_prefix: str | None) -> int:
@@ -78,52 +107,92 @@ def upsert_site(con, site: dict, village_id: int) -> int:
 def upsert_figure(con, fig: dict) -> int:
     con.execute(
         """
-        INSERT INTO figure (number, caption, page, source_file)
-        VALUES (?, ?, ?, ?)
+        INSERT INTO figure (number, caption, page, source_file, image_path, image_mime, image_sha256)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
         ON CONFLICT(number) DO UPDATE SET
           caption = excluded.caption,
           page = COALESCE(excluded.page, figure.page),
           source_file = COALESCE(excluded.source_file, figure.source_file),
+
+          image_path = COALESCE(excluded.image_path, figure.image_path),
+          image_mime = COALESCE(excluded.image_mime, figure.image_mime),
+          image_sha256 = COALESCE(excluded.image_sha256, figure.image_sha256),
+
           updated_at = datetime('now')
         """,
-        (fig["number"], fig["caption"], fig.get("page"), fig.get("source_file")),
+        (
+            fig["number"],
+            fig["caption"],
+            fig.get("page"),
+            fig.get("source_file"),
+            fig.get("image_path"),
+            fig.get("image_mime"),
+            fig.get("image_sha256"),
+        ),
     )
     row = con.execute("SELECT id FROM figure WHERE number = ?", (fig["number"],)).fetchone()
     return int(row["id"])
 
+
 def upsert_map(con, m: dict) -> int:
     con.execute(
         """
-        INSERT INTO map (number, caption, page, source_file)
-        VALUES (?, ?, ?, ?)
+        INSERT INTO map (number, caption, page, source_file, image_path, image_mime, image_sha256)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
         ON CONFLICT(number) DO UPDATE SET
           caption = excluded.caption,
           page = COALESCE(excluded.page, map.page),
           source_file = COALESCE(excluded.source_file, map.source_file),
+
+          image_path = COALESCE(excluded.image_path, map.image_path),
+          image_mime = COALESCE(excluded.image_mime, map.image_mime),
+          image_sha256 = COALESCE(excluded.image_sha256, map.image_sha256),
+
           updated_at = datetime('now')
         """,
-        (m["number"], m["caption"], m.get("page"), m.get("source_file")),
+        (
+            m["number"],
+            m["caption"],
+            m.get("page"),
+            m.get("source_file"),
+            m.get("image_path"),
+            m.get("image_mime"),
+            m.get("image_sha256"),
+        ),
     )
     row = con.execute("SELECT id FROM map WHERE number = ?", (m["number"],)).fetchone()
     return int(row["id"])
 
 
+
 def upsert_plate(con, p: dict) -> int:
     con.execute(
         """
-        INSERT INTO plate (number, caption, page, source_file)
-        VALUES (?, ?, ?, ?)
+        INSERT INTO plate (number, caption, page, source_file, image_path, image_mime, image_sha256)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
         ON CONFLICT(number) DO UPDATE SET
           caption = excluded.caption,
           page = COALESCE(excluded.page, plate.page),
           source_file = COALESCE(excluded.source_file, plate.source_file),
+
+          image_path = COALESCE(excluded.image_path, plate.image_path),
+          image_mime = COALESCE(excluded.image_mime, plate.image_mime),
+          image_sha256 = COALESCE(excluded.image_sha256, plate.image_sha256),
+
           updated_at = datetime('now')
         """,
-        (p["number"], p["caption"], p.get("page"), p.get("source_file")),
+        (
+            p["number"],
+            p["caption"],
+            p.get("page"),
+            p.get("source_file"),
+            p.get("image_path"),
+            p.get("image_mime"),
+            p.get("image_sha256"),
+        ),
     )
     row = con.execute("SELECT id FROM plate WHERE number = ?", (p["number"],)).fetchone()
     return int(row["id"])
-
 
 
 def load_sites(db_path: Path, sites_jsonl: Path) -> None:
@@ -134,23 +203,36 @@ def load_sites(db_path: Path, sites_jsonl: Path) -> None:
             upsert_site(con, s, village_id)
 
 
-def load_figures(db_path: Path, figures_jsonl: Path) -> None:
+def load_figures(db_path: Path, figures_jsonl: Path, raw_figures_dir: Path) -> None:
     figs = read_jsonl(figures_jsonl)
     with connect(db_path) as con:
         for f in figs:
+            img_path, img_mime, img_sha = image_info_for("figure", raw_figures_dir, int(f["number"]))
+            f["image_path"] = img_path
+            f["image_mime"] = img_mime
+            f["image_sha256"] = img_sha
             upsert_figure(con, f)
 
-def load_maps(db_path: Path, maps_jsonl: Path) -> None:
+
+def load_maps(db_path: Path, maps_jsonl: Path, raw_maps_dir: Path) -> None:
     maps = read_jsonl(maps_jsonl)
     with connect(db_path) as con:
         for m in maps:
+            img_path, img_mime, img_sha = image_info_for("map", raw_maps_dir, int(m["number"]))
+            m["image_path"] = img_path
+            m["image_mime"] = img_mime
+            m["image_sha256"] = img_sha
             upsert_map(con, m)
 
 
-def load_plates(db_path: Path, plates_jsonl: Path) -> None:
+def load_plates(db_path: Path, plates_jsonl: Path, raw_plates_dir: Path) -> None:
     plates = read_jsonl(plates_jsonl)
     with connect(db_path) as con:
         for p in plates:
+            img_path, img_mime, img_sha = image_info_for("plate", raw_plates_dir, int(p["number"]))
+            p["image_path"] = img_path
+            p["image_mime"] = img_mime
+            p["image_sha256"] = img_sha
             upsert_plate(con, p)
 
 

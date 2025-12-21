@@ -26,6 +26,9 @@ CLEANED_DIR = DATA_DIR / "cleaned"
 INTERIM_DIR = DATA_DIR / "interim"
 DB_PATH = DATA_DIR / "db" / "edition.sqlite"
 SCHEMA_PATH = PROJECT_ROOT / "src" / "schema.sql"
+RAW_FIGURES_DIR = RAW_DIR / "figures"
+RAW_MAPS_DIR = RAW_DIR / "maps"
+RAW_PLATES_DIR = RAW_DIR / "plates"
 
 
 def cmd_clean() -> None:
@@ -70,19 +73,17 @@ def cmd_parse_gazetteer() -> None:
     print(f"Parsed sites: {len(sites)}")
 
 def cmd_load() -> None:
-    # Load "dimension" tables first
     load_sites(DB_PATH, INTERIM_DIR / "sites.jsonl")
 
-    load_figures(DB_PATH, INTERIM_DIR / "figures.jsonl")
-    load_maps(DB_PATH, INTERIM_DIR / "maps.jsonl")
-    load_plates(DB_PATH, INTERIM_DIR / "plates.jsonl")
+    load_figures(DB_PATH, INTERIM_DIR / "figures.jsonl", RAW_FIGURES_DIR)
+    load_maps(DB_PATH, INTERIM_DIR / "maps.jsonl", RAW_MAPS_DIR)
+    load_plates(DB_PATH, INTERIM_DIR / "plates.jsonl", RAW_PLATES_DIR)
 
-    # Then load link tables
     load_site_figure_links(DB_PATH, INTERIM_DIR / "site_figure.jsonl")
     load_site_map_links(DB_PATH, INTERIM_DIR / "site_map.jsonl")
     load_site_plate_links(DB_PATH, INTERIM_DIR / "site_plate.jsonl")
 
-    print("Loaded interim JSONL into SQLite.")
+    print("Loaded interim JSONL into SQLite (including image metadata).")
 
 
 def main() -> None:
