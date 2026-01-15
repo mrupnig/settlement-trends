@@ -27,25 +27,30 @@ def sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 
-def image_info_for(kind: str, raw_dir: Path, number: int) -> tuple[str | None, str | None, str | None]:
+def image_info_for(
+    kind: str,
+    raw_dir: Path,
+    number: int,
+    project_root: Path,
+) -> tuple[str | None, str | None, str | None]:
     """
-    kind: "figure" | "map" | "plate"
-    raw_dir: e.g. data/raw/figures
-    number: e.g. 50
-
-    returns (relative_path, mime, sha256) or (None, None, None) if file does not exist
+    Returns (relative_path, mime, sha256) or (None, None, None)
     """
     prefix = {"figure": "fig", "map": "map", "plate": "plate"}[kind]
     filename = f"{prefix}_{number:03d}.png"
     abs_path = raw_dir / filename
+
     if not abs_path.exists():
         return None, None, None
 
-    # Store relative path (portable inside repo)
-    rel_path = str(abs_path.as_posix())
+    # relative path
+    rel_path = abs_path.relative_to(project_root).as_posix()
+
     mime = "image/png"
     digest = sha256_file(abs_path)
+
     return rel_path, mime, digest
+
 
 
 def upsert_village(con, name: str, code_prefix: str | None) -> int:
@@ -203,33 +208,33 @@ def load_sites(db_path: Path, sites_jsonl: Path) -> None:
             upsert_site(con, s, village_id)
 
 
-def load_figures(db_path: Path, figures_jsonl: Path, raw_figures_dir: Path) -> None:
+def load_figures(db_path: Path, figures_jsonl: Path, raw_figures_dir: Path, project_root: Path) -> None:
     figs = read_jsonl(figures_jsonl)
     with connect(db_path) as con:
         for f in figs:
-            img_path, img_mime, img_sha = image_info_for("figure", raw_figures_dir, int(f["number"]))
+            img_path, img_mime, img_sha = image_info_for("figure", raw_figures_dir, int(f["number"]), project_root)
             f["image_path"] = img_path
             f["image_mime"] = img_mime
             f["image_sha256"] = img_sha
             upsert_figure(con, f)
 
 
-def load_maps(db_path: Path, maps_jsonl: Path, raw_maps_dir: Path) -> None:
+def load_maps(db_path: Path, maps_jsonl: Path, raw_maps_dir: Path, project_root: Path) -> None:
     maps = read_jsonl(maps_jsonl)
     with connect(db_path) as con:
         for m in maps:
-            img_path, img_mime, img_sha = image_info_for("map", raw_maps_dir, int(m["number"]))
+            img_path, img_mime, img_sha = image_info_for("map", raw_maps_dir, int(m["number"]), project_root)
             m["image_path"] = img_path
             m["image_mime"] = img_mime
             m["image_sha256"] = img_sha
             upsert_map(con, m)
 
 
-def load_plates(db_path: Path, plates_jsonl: Path, raw_plates_dir: Path) -> None:
+def load_plates(db_path: Path, plates_jsonl: Path, raw_plates_dir: Path, project_root: Path) -> None:
     plates = read_jsonl(plates_jsonl)
     with connect(db_path) as con:
         for p in plates:
-            img_path, img_mime, img_sha = image_info_for("plate", raw_plates_dir, int(p["number"]))
+            img_path, img_mime, img_sha = image_info_for("plate", raw_plates_dir, int(p["number"]), project_root)
             p["image_path"] = img_path
             p["image_mime"] = img_mime
             p["image_sha256"] = img_sha

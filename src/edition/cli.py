@@ -75,9 +75,9 @@ def cmd_parse_gazetteer() -> None:
 def cmd_load() -> None:
     load_sites(DB_PATH, INTERIM_DIR / "sites.jsonl")
 
-    load_figures(DB_PATH, INTERIM_DIR / "figures.jsonl", RAW_FIGURES_DIR)
-    load_maps(DB_PATH, INTERIM_DIR / "maps.jsonl", RAW_MAPS_DIR)
-    load_plates(DB_PATH, INTERIM_DIR / "plates.jsonl", RAW_PLATES_DIR)
+    load_figures(DB_PATH, INTERIM_DIR / "figures.jsonl", RAW_FIGURES_DIR, PROJECT_ROOT,)
+    load_maps(DB_PATH, INTERIM_DIR / "maps.jsonl", RAW_MAPS_DIR, PROJECT_ROOT,)
+    load_plates(DB_PATH, INTERIM_DIR / "plates.jsonl", RAW_PLATES_DIR, PROJECT_ROOT,)
 
     load_site_figure_links(DB_PATH, INTERIM_DIR / "site_figure.jsonl")
     load_site_map_links(DB_PATH, INTERIM_DIR / "site_map.jsonl")
