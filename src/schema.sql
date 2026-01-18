@@ -168,3 +168,54 @@ CREATE TABLE IF NOT EXISTS site_typology (
 );
 
 CREATE INDEX IF NOT EXISTS ix_site_typology_typology_id ON site_typology(typology_id);
+
+-- Individual finds (e.g. W.D.001)
+CREATE TABLE IF NOT EXISTS find_item (
+  id          INTEGER PRIMARY KEY,
+
+  object_no   TEXT NOT NULL,     -- e.g. "W.D.001"
+  area        TEXT,              -- e.g. "al-Fulayj"
+  site_raw    TEXT,              -- original "site" field from JSONL (may include "Tomb 8")
+  site_code   TEXT,              -- extracted CS.* code (e.g. "CS.4.13")
+  context     TEXT,              -- e.g. "Tomb 8" (best-effort)
+  site_id     INTEGER,           -- optional FK to site table
+
+  period      TEXT,
+  description TEXT,
+
+  source_file TEXT,
+
+  created_at  TEXT NOT NULL DEFAULT (datetime('now')),
+  updated_at  TEXT NOT NULL DEFAULT (datetime('now')),
+
+  CONSTRAINT uq_find_object_no UNIQUE (object_no),
+  CONSTRAINT fk_find_site FOREIGN KEY (site_id)
+    REFERENCES site(id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
+);
+
+CREATE INDEX IF NOT EXISTS ix_find_site_code ON find_item(site_code);
+CREATE INDEX IF NOT EXISTS ix_find_site_id ON find_item(site_id);
+CREATE INDEX IF NOT EXISTS ix_find_period ON find_item(period);
+
+-- Link finds to plates (find can reference multiple plates)
+CREATE TABLE IF NOT EXISTS find_plate (
+  find_id      INTEGER NOT NULL,
+  plate_number INTEGER NOT NULL,  -- store even if plate record missing
+  plate_id     INTEGER,           -- nullable FK to plate
+
+  PRIMARY KEY (find_id, plate_number),
+
+  CONSTRAINT fk_fp_find FOREIGN KEY (find_id)
+    REFERENCES find_item(id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+
+  CONSTRAINT fk_fp_plate FOREIGN KEY (plate_id)
+    REFERENCES plate(id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
+);
+
+CREATE INDEX IF NOT EXISTS ix_find_plate_plate_id ON find_plate(plate_id);

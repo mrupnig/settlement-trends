@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import hashlib
+import re
+
 
 from .db import connect
 
@@ -18,6 +20,53 @@ def read_jsonl(path: Path) -> list[dict]:
                 continue
             records.append(json.loads(ln))
     return records
+
+CS_CODE_RE = re.compile(r"\bCS\.\d+(?:\.\d+)*\b", re.IGNORECASE)
+PLATE_RE = re.compile(r"\bPlate\s+(\d+)\b", re.IGNORECASE)
+
+
+def parse_site_field(site_raw: str | None) -> tuple[str | None, str | None]:
+    """
+    Input examples:
+      "CS.4.13, Tomb 8"
+      "CS.1.2.1"
+      "CS.4.13, Tomb 8, Chamber 2" (we keep rest as context)
+    Returns:
+      (site_code, context)
+    """
+    if not site_raw:
+        return None, None
+
+    m = CS_CODE_RE.search(site_raw)
+    if not m:
+        return None, site_raw.strip() or None
+
+    site_code = m.group(0).upper()
+    # context = everything after the CS.* code, stripped of leading separators
+    rest = site_raw[m.end():].strip()
+    rest = rest.lstrip(" ,;:-").strip()
+    context = rest or None
+    return site_code, context
+
+
+def extract_plate_numbers(text: str | None) -> list[int]:
+    if not text:
+        return []
+    nums = []
+    for m in PLATE_RE.finditer(text):
+        try:
+            nums.append(int(m.group(1)))
+        except ValueError:
+            continue
+    # preserve order but unique
+    seen = set()
+    out = []
+    for n in nums:
+        if n not in seen:
+            out.append(n)
+            seen.add(n)
+    return out
+
 
 def sha256_file(path: Path) -> str:
     h = hashlib.sha256()
@@ -169,7 +218,6 @@ def upsert_map(con, m: dict) -> int:
     return int(row["id"])
 
 
-
 def upsert_plate(con, p: dict) -> int:
     con.execute(
         """
@@ -198,6 +246,7 @@ def upsert_plate(con, p: dict) -> int:
     )
     row = con.execute("SELECT id FROM plate WHERE number = ?", (p["number"],)).fetchone()
     return int(row["id"])
+
 
 def upsert_typology(con, t: dict) -> int:
     con.execute(
@@ -232,6 +281,40 @@ def upsert_typology(con, t: dict) -> int:
     ).fetchone()
     return int(row["id"])
 
+
+def upsert_find_item(con, rec: dict) -> int:
+    con.execute(
+        """
+        INSERT INTO find_item (
+          object_no, area, site_raw, site_code, context, site_id,
+          period, description, source_file
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ON CONFLICT(object_no) DO UPDATE SET
+          area = COALESCE(excluded.area, find_item.area),
+          site_raw = COALESCE(excluded.site_raw, find_item.site_raw),
+          site_code = COALESCE(excluded.site_code, find_item.site_code),
+          context = COALESCE(excluded.context, find_item.context),
+          site_id = COALESCE(excluded.site_id, find_item.site_id),
+          period = COALESCE(excluded.period, find_item.period),
+          description = COALESCE(excluded.description, find_item.description),
+          source_file = COALESCE(excluded.source_file, find_item.source_file),
+          updated_at = datetime('now')
+        """,
+        (
+            rec["object_no"],
+            rec.get("area"),
+            rec.get("site_raw"),
+            rec.get("site_code"),
+            rec.get("context"),
+            rec.get("site_id"),
+            rec.get("period"),
+            rec.get("description"),
+            rec.get("source_file"),
+        ),
+    )
+    row = con.execute("SELECT id FROM find_item WHERE object_no = ?", (rec["object_no"],)).fetchone()
+    return int(row["id"])
 
 
 def load_sites(db_path: Path, sites_jsonl: Path) -> None:
@@ -346,4 +429,51 @@ def load_typology(db_path: Path, typology_jsonl: Path) -> None:
                 con.execute(
                     "INSERT OR IGNORE INTO site_typology (site_id, typology_id) VALUES (?, ?)",
                     (int(site["id"]), typology_id),
+                )
+                
+def load_finds(db_path: Path, finds_jsonl: Path) -> None:
+    records = read_jsonl(finds_jsonl)
+    with connect(db_path) as con:
+        for r in records:
+            object_no = r.get("object_no")
+            if not object_no:
+                continue
+
+            site_raw = r.get("site")
+            site_code, context = parse_site_field(site_raw)
+
+            site_id = None
+            if site_code:
+                row = con.execute("SELECT id FROM site WHERE code = ?", (site_code,)).fetchone()
+                if row:
+                    site_id = int(row["id"])
+
+            rec = {
+                "object_no": object_no,
+                "area": r.get("area"),
+                "site_raw": site_raw,
+                "site_code": site_code,
+                "context": context,
+                "site_id": site_id,
+                "period": r.get("period"),
+                "description": r.get("description"),
+                "source_file": finds_jsonl.name,
+            }
+
+            find_id = upsert_find_item(con, rec)
+
+            # Link to plates (if referenced in description)
+            for plate_number in extract_plate_numbers(r.get("description")):
+                plate_row = con.execute(
+                    "SELECT id FROM plate WHERE number = ?",
+                    (plate_number,),
+                ).fetchone()
+                plate_id = int(plate_row["id"]) if plate_row else None
+
+                con.execute(
+                    """
+                    INSERT OR IGNORE INTO find_plate (find_id, plate_number, plate_id)
+                    VALUES (?, ?, ?)
+                    """,
+                    (find_id, plate_number, plate_id),
                 )
