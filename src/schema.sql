@@ -132,3 +132,39 @@ CREATE TABLE IF NOT EXISTS site_plate (
 );
 
 CREATE INDEX IF NOT EXISTS ix_site_plate_plate_id ON site_plate(plate_id);
+
+CREATE TABLE IF NOT EXISTS typology (
+  id                INTEGER PRIMARY KEY,
+  category          TEXT NOT NULL,
+  sub_category      TEXT,
+  sub_sub_category  TEXT,
+  site_feature_type TEXT NOT NULL,   -- z.B. "Beehive Tomb"
+  description       TEXT,
+  source_file       TEXT,
+
+  created_at        TEXT NOT NULL DEFAULT (datetime('now')),
+  updated_at        TEXT NOT NULL DEFAULT (datetime('now')),
+
+  CONSTRAINT uq_typology_key UNIQUE (category, sub_category, sub_sub_category, site_feature_type)
+);
+
+CREATE INDEX IF NOT EXISTS ix_typology_feature_type ON typology(site_feature_type);
+
+CREATE TABLE IF NOT EXISTS site_typology (
+  site_id     INTEGER NOT NULL,
+  typology_id INTEGER NOT NULL,
+
+  PRIMARY KEY (site_id, typology_id),
+
+  CONSTRAINT fk_st_site FOREIGN KEY (site_id)
+    REFERENCES site(id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+
+  CONSTRAINT fk_st_typology FOREIGN KEY (typology_id)
+    REFERENCES typology(id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
+
+CREATE INDEX IF NOT EXISTS ix_site_typology_typology_id ON site_typology(typology_id);

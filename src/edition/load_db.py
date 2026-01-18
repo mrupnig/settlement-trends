@@ -199,6 +199,40 @@ def upsert_plate(con, p: dict) -> int:
     row = con.execute("SELECT id FROM plate WHERE number = ?", (p["number"],)).fetchone()
     return int(row["id"])
 
+def upsert_typology(con, t: dict) -> int:
+    con.execute(
+        """
+        INSERT INTO typology (
+          category, sub_category, sub_sub_category, site_feature_type, description, source_file
+        )
+        VALUES (?, ?, ?, ?, ?, ?)
+        ON CONFLICT(category, sub_category, sub_sub_category, site_feature_type) DO UPDATE SET
+          description = COALESCE(excluded.description, typology.description),
+          source_file = COALESCE(excluded.source_file, typology.source_file),
+          updated_at = datetime('now')
+        """,
+        (
+            t["category"],
+            t.get("sub_category"),
+            t.get("sub_sub_category"),
+            t["site_feature_type"],
+            t.get("description"),
+            t.get("source_file"),
+        ),
+    )
+    row = con.execute(
+        """
+        SELECT id FROM typology
+        WHERE category = ?
+          AND COALESCE(sub_category, '') = COALESCE(?, '')
+          AND COALESCE(sub_sub_category, '') = COALESCE(?, '')
+          AND site_feature_type = ?
+        """,
+        (t["category"], t.get("sub_category"), t.get("sub_sub_category"), t["site_feature_type"]),
+    ).fetchone()
+    return int(row["id"])
+
+
 
 def load_sites(db_path: Path, sites_jsonl: Path) -> None:
     sites = read_jsonl(sites_jsonl)
@@ -285,3 +319,31 @@ def load_site_figure_links(db_path: Path, links_jsonl: Path) -> None:
                 """,
                 (int(site["id"]), int(fig["id"])),
             )
+
+def _split_sites_field(sites_field: str | None) -> list[str]:
+    if not sites_field:
+        return []
+    # supports "CS.1.1, CS.1.3, CS.14, ..."
+    parts = [p.strip() for p in sites_field.split(",")]
+    # normalize to uppercase (matches how you store codes elsewhere)
+    return [p.upper() for p in parts if p]
+
+
+def load_typology(db_path: Path, typology_jsonl: Path) -> None:
+    records = read_jsonl(typology_jsonl)
+    with connect(db_path) as con:
+        for t in records:
+            # annotate provenance if absent
+            t.setdefault("source_file", typology_jsonl.name)
+
+            typology_id = upsert_typology(con, t)
+
+            for site_code in _split_sites_field(t.get("sites")):
+                site = con.execute("SELECT id FROM site WHERE code = ?", (site_code,)).fetchone()
+                if not site:
+                    # site missing in DB (maybe not parsed yet) -> skip for now
+                    continue
+                con.execute(
+                    "INSERT OR IGNORE INTO site_typology (site_id, typology_id) VALUES (?, ?)",
+                    (int(site["id"]), typology_id),
+                )

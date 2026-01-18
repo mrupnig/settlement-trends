@@ -15,6 +15,7 @@ from .load_db import (
     load_site_map_links,
     load_plates,
     load_site_plate_links,
+    load_typology,
 )
 
 
@@ -82,6 +83,7 @@ def cmd_load() -> None:
     load_site_figure_links(DB_PATH, INTERIM_DIR / "site_figure.jsonl")
     load_site_map_links(DB_PATH, INTERIM_DIR / "site_map.jsonl")
     load_site_plate_links(DB_PATH, INTERIM_DIR / "site_plate.jsonl")
+    load_typology(DB_PATH, INTERIM_DIR / "typology.jsonl")
 
     print("Loaded interim JSONL into SQLite (including image metadata).")
 
