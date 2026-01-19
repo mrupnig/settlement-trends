@@ -27,8 +27,11 @@ PLATE_RE = re.compile(r"\bPlate\s+(\d+)\b", re.IGNORECASE)
 # Matches "4 sherds", "I sherd", "II sherds", OCR variants
 SHERD_COUNT_RE = re.compile(r"\b([IVXLCDM]+|\d+|[Il])\s*sherd", re.IGNORECASE)
 
-# Extract P-codes like P00681, P02326 etc (OCR may vary: P0..., PO..., P.123)
-P_CODE_RE = re.compile(r"\bP[0O]?\s*\.?\s*\d{3,6}\b", re.IGNORECASE)
+P_SINGLE_RE = re.compile(r"\bP\s*[0O]?\s*\.?\s*(\d{3,6})\b", re.IGNORECASE)
+P_RANGE_RE = re.compile(
+    r"\bP\s*[0O]?\s*\.?\s*(\d{3,6})\s*-\s*P\s*[0O]?\s*\.?\s*(\d{3,6})\b",
+    re.IGNORECASE,
+)
 
 # Extract plate numbers inside "Plates: 382 (A-B); 387 (A-C)"
 PLATE_NUM_RE = re.compile(r"\b(\d{1,4})\b")
@@ -83,10 +86,58 @@ def parse_site_entry(entry: str) -> tuple[str | None, int | None, str | None, st
         sherd_count = _parse_count_token(mc.group(1))
 
     # extract P-codes (raw list)
-    p_codes = [re.sub(r"\s+", "", x.upper().replace("O", "0")) for x in P_CODE_RE.findall(entry)]
-    sample_codes_text = ", ".join(sorted(set(p_codes))) if p_codes else None
+    p_codes = extract_p_codes_expanded(entry)
+    sample_codes_text = ", ".join(p_codes) if p_codes else None
+
 
     return site_code, sherd_count, evidence, sample_codes_text
+
+def _norm_p_int(s: str) -> int:
+    # keep only digits; caller already passes digits but OCR cleanup can happen here too
+    return int(s)
+
+
+def extract_p_codes_expanded(text: str | None) -> list[str]:
+    """
+    Expands ranges and preserves exactly 5 digits after 'P'.
+
+    Examples:
+      P01407        -> P01407
+      P10336-P10343 -> P10336..P10343
+      P00009-P00011 & P13705-P13712 -> full expanded list
+    """
+    if not text:
+        return []
+
+    # Mild OCR normalization (safe)
+    t = text.replace("O", "0").replace("o", "0")
+
+    expanded: list[str] = []
+
+    # 1) Expand ranges
+    for m in P_RANGE_RE.finditer(t):
+        start = int(m.group(1))
+        end = int(m.group(2))
+        if end < start:
+            start, end = end, start
+
+        for n in range(start, end + 1):
+            expanded.append(f"P{n:05d}")  # 🔑 ALWAYS 5 digits
+
+    # 2) Add single codes
+    for m in P_SINGLE_RE.finditer(t):
+        n = int(m.group(1))
+        expanded.append(f"P{n:05d}")      # 🔑 ALWAYS 5 digits
+
+    # 3) De-duplicate preserving order
+    seen = set()
+    out: list[str] = []
+    for code in expanded:
+        if code not in seen:
+            out.append(code)
+            seen.add(code)
+
+    return out
 
 
 def extract_plate_numbers_from_figures_field(figures_text: str | None) -> list[int]:
@@ -471,6 +522,18 @@ def upsert_pottery_class(con, r: dict) -> int:
     return int(row["id"])
 
 
+def upsert_pottery_sample(con, code: str) -> int:
+    con.execute(
+        """
+        INSERT INTO pottery_sample (code)
+        VALUES (?)
+        ON CONFLICT(code) DO NOTHING
+        """,
+        (code,),
+    )
+    row = con.execute("SELECT id FROM pottery_sample WHERE code = ?", (code,)).fetchone()
+    return int(row["id"])
+
 
 def load_sites(db_path: Path, sites_jsonl: Path) -> None:
     sites = read_jsonl(sites_jsonl)
@@ -667,6 +730,19 @@ def load_classification(db_path: Path, classification_jsonl: Path) -> None:
                     """,
                     (class_id, site_id, site_code, sherd_count, evidence, sample_codes_text),
                 )
+                # After writing pottery_class_site row:
+                if sample_codes_text:
+                    for code in [c.strip() for c in sample_codes_text.split(",") if c.strip()]:
+                        sample_id = upsert_pottery_sample(con, code)
+                        con.execute(
+                            """
+                            INSERT OR IGNORE INTO pottery_class_site_sample
+                            (pottery_class_id, site_code, sample_id)
+                            VALUES (?, ?, ?)
+                            """,
+                            (class_id, site_code, sample_id),
+                        )
+
 
             # 2) Plate links (from figures field "Plates: ...")
             for plate_number in extract_plate_numbers_from_figures_field(r.get("figures")):
