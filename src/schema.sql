@@ -219,3 +219,99 @@ CREATE TABLE IF NOT EXISTS find_plate (
 );
 
 CREATE INDEX IF NOT EXISTS ix_find_plate_plate_id ON find_plate(plate_id);
+
+-- Pottery / ware classification entries (one row per class_code)
+CREATE TABLE IF NOT EXISTS pottery_class (
+  id            INTEGER PRIMARY KEY,
+
+  class_group   TEXT,           -- field "class" (e.g. "UMM AN-NAR PERIOD")
+  class_code    TEXT NOT NULL,  -- e.g. "UMFGW"
+  class_name    TEXT NOT NULL,  -- e.g. "Umm an-Nar Fine Gray Ware"
+  period        TEXT,
+  description   TEXT,
+  origin        TEXT,
+
+  total_sherds_text TEXT,       -- keep raw (often "231 sherds")
+  parallels     TEXT,
+  figures_text  TEXT,           -- raw references string
+  sites_text    TEXT,           -- raw sites string
+
+  source_file   TEXT,
+
+  created_at    TEXT NOT NULL DEFAULT (datetime('now')),
+  updated_at    TEXT NOT NULL DEFAULT (datetime('now')),
+
+  CONSTRAINT uq_pottery_class_code UNIQUE (class_code)
+);
+
+CREATE INDEX IF NOT EXISTS ix_pottery_class_period ON pottery_class(period);
+CREATE INDEX IF NOT EXISTS ix_pottery_class_name ON pottery_class(class_name);
+
+-- Occurrence of a pottery class in a site (with count + evidence snippet)
+CREATE TABLE IF NOT EXISTS pottery_class_site (
+  pottery_class_id INTEGER NOT NULL,
+  site_id          INTEGER,       -- nullable FK (if site missing)
+  site_code        TEXT,          -- always filled if parsed
+
+  sherd_count      INTEGER,       -- best-effort numeric
+  evidence_text    TEXT,          -- e.g. "4 sherds (POI274-POI277)"
+  sample_codes_text TEXT,         -- optional extracted "P..." codes (raw list)
+
+  PRIMARY KEY (pottery_class_id, site_code),
+
+  CONSTRAINT fk_pcs_class FOREIGN KEY (pottery_class_id)
+    REFERENCES pottery_class(id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+
+  CONSTRAINT fk_pcs_site FOREIGN KEY (site_id)
+    REFERENCES site(id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
+);
+
+CREATE INDEX IF NOT EXISTS ix_pcs_site_code ON pottery_class_site(site_code);
+CREATE INDEX IF NOT EXISTS ix_pcs_site_id ON pottery_class_site(site_id);
+
+-- Links from pottery classes to plates (most useful, since you have images)
+CREATE TABLE IF NOT EXISTS pottery_class_plate (
+  pottery_class_id INTEGER NOT NULL,
+  plate_number     INTEGER NOT NULL,
+  plate_id         INTEGER,
+
+  PRIMARY KEY (pottery_class_id, plate_number),
+
+  CONSTRAINT fk_pcp_class FOREIGN KEY (pottery_class_id)
+    REFERENCES pottery_class(id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+
+  CONSTRAINT fk_pcp_plate FOREIGN KEY (plate_id)
+    REFERENCES plate(id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
+);
+
+CREATE INDEX IF NOT EXISTS ix_pcp_plate_id ON pottery_class_plate(plate_id);
+
+-- Optional: store figure references; figures may be roman numerals ("III") or ints
+CREATE TABLE IF NOT EXISTS pottery_class_figure_ref (
+  pottery_class_id INTEGER NOT NULL,
+  figure_label      TEXT NOT NULL,  -- e.g. "122" or "III"
+  figure_number     INTEGER,         -- if parseable as int
+  figure_id         INTEGER,
+
+  PRIMARY KEY (pottery_class_id, figure_label),
+
+  CONSTRAINT fk_pcf_class FOREIGN KEY (pottery_class_id)
+    REFERENCES pottery_class(id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+
+  CONSTRAINT fk_pcf_figure FOREIGN KEY (figure_id)
+    REFERENCES figure(id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
+);
+
+CREATE INDEX IF NOT EXISTS ix_pcf_figure_id ON pottery_class_figure_ref(figure_id);

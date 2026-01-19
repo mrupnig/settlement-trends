@@ -24,6 +24,122 @@ def read_jsonl(path: Path) -> list[dict]:
 CS_CODE_RE = re.compile(r"\bCS\.\d+(?:\.\d+)*\b", re.IGNORECASE)
 PLATE_RE = re.compile(r"\bPlate\s+(\d+)\b", re.IGNORECASE)
 
+# Matches "4 sherds", "I sherd", "II sherds", OCR variants
+SHERD_COUNT_RE = re.compile(r"\b([IVXLCDM]+|\d+|[Il])\s*sherd", re.IGNORECASE)
+
+# Extract P-codes like P00681, P02326 etc (OCR may vary: P0..., PO..., P.123)
+P_CODE_RE = re.compile(r"\bP[0O]?\s*\.?\s*\d{3,6}\b", re.IGNORECASE)
+
+# Extract plate numbers inside "Plates: 382 (A-B); 387 (A-C)"
+PLATE_NUM_RE = re.compile(r"\b(\d{1,4})\b")
+
+# Figure references: can be digits or roman numerals like "III"
+FIG_LABEL_RE = re.compile(r"\b(\d{1,4}|[IVXLCDM]{1,8})\b", re.IGNORECASE)
+
+
+_ROMAN = {"I":1,"II":2,"III":3,"IV":4,"V":5,"VI":6,"VII":7,"VIII":8,"IX":9,"X":10,"XI":11,"XII":12}
+def _parse_count_token(tok: str) -> int | None:
+    if not tok:
+        return None
+    t = tok.strip().upper()
+    if t.isdigit():
+        return int(t)
+    # OCR: "l" often used for "1"
+    if t in {"L", "I"}:
+        return 1
+    return _ROMAN.get(t)
+
+
+def split_site_entries(sites_text: str | None) -> list[str]:
+    """
+    Example:
+      "CS.5.2.1= 4 sherds (...); CS.5.1.2= 2 sherds (...); ..."
+    We split on semicolons first. Also handle stray ":" as separators.
+    """
+    if not sites_text:
+        return []
+    text = sites_text.replace(":", ";")
+    parts = [p.strip() for p in text.split(";")]
+    return [p for p in parts if p]
+
+
+def parse_site_entry(entry: str) -> tuple[str | None, int | None, str | None, str | None]:
+    """
+    Returns: (site_code, sherd_count, evidence_text, sample_codes_text)
+    """
+    m = CS_CODE_RE.search(entry)
+    if not m:
+        return None, None, None, None
+
+    site_code = m.group(0).upper()
+
+    evidence = entry[m.end():].strip()
+    evidence = evidence.lstrip(" =,-").strip() or None
+
+    # best-effort count
+    sherd_count = None
+    mc = SHERD_COUNT_RE.search(entry)
+    if mc:
+        sherd_count = _parse_count_token(mc.group(1))
+
+    # extract P-codes (raw list)
+    p_codes = [re.sub(r"\s+", "", x.upper().replace("O", "0")) for x in P_CODE_RE.findall(entry)]
+    sample_codes_text = ", ".join(sorted(set(p_codes))) if p_codes else None
+
+    return site_code, sherd_count, evidence, sample_codes_text
+
+
+def extract_plate_numbers_from_figures_field(figures_text: str | None) -> list[int]:
+    """
+    The field mixes "Plates: 382 (A-B)" and figures.
+    We'll only pull plate numbers after the word 'Plates' if present,
+    else fallback to extracting numbers conservatively.
+    """
+    if not figures_text:
+        return []
+    # Try to isolate substring after "Plates"
+    lower = figures_text.lower()
+    idx = lower.find("plates")
+    if idx == -1:
+        return []
+    sub = figures_text[idx:]
+    nums = []
+    for m in PLATE_NUM_RE.finditer(sub):
+        n = int(m.group(1))
+        nums.append(n)
+    # unique preserving order
+    seen = set()
+    out = []
+    for n in nums:
+        if n not in seen:
+            out.append(n); seen.add(n)
+    return out
+
+
+def extract_figure_labels(figures_text: str | None) -> list[str]:
+    """
+    Extract labels like '122', 'III' from figures_text, excluding plate-only part when possible.
+    """
+    if not figures_text:
+        return []
+    # Remove everything after "Plates" to avoid mixing plate numbers into figure labels
+    lower = figures_text.lower()
+    idx = lower.find("plates")
+    sub = figures_text[:idx] if idx != -1 else figures_text
+
+    labels = []
+    for m in FIG_LABEL_RE.finditer(sub):
+        labels.append(m.group(1).upper())
+
+    # De-dup preserving order
+    seen = set()
+    out = []
+    for x in labels:
+        if x not in seen:
+            out.append(x); seen.add(x)
+    return out
+
+
 
 def parse_site_field(site_raw: str | None) -> tuple[str | None, str | None]:
     """
@@ -316,6 +432,45 @@ def upsert_find_item(con, rec: dict) -> int:
     row = con.execute("SELECT id FROM find_item WHERE object_no = ?", (rec["object_no"],)).fetchone()
     return int(row["id"])
 
+def upsert_pottery_class(con, r: dict) -> int:
+    con.execute(
+        """
+        INSERT INTO pottery_class (
+          class_group, class_code, class_name, period, description, origin,
+          total_sherds_text, parallels, figures_text, sites_text, source_file
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ON CONFLICT(class_code) DO UPDATE SET
+          class_group = COALESCE(excluded.class_group, pottery_class.class_group),
+          class_name = COALESCE(excluded.class_name, pottery_class.class_name),
+          period = COALESCE(excluded.period, pottery_class.period),
+          description = COALESCE(excluded.description, pottery_class.description),
+          origin = COALESCE(excluded.origin, pottery_class.origin),
+          total_sherds_text = COALESCE(excluded.total_sherds_text, pottery_class.total_sherds_text),
+          parallels = COALESCE(excluded.parallels, pottery_class.parallels),
+          figures_text = COALESCE(excluded.figures_text, pottery_class.figures_text),
+          sites_text = COALESCE(excluded.sites_text, pottery_class.sites_text),
+          source_file = COALESCE(excluded.source_file, pottery_class.source_file),
+          updated_at = datetime('now')
+        """,
+        (
+            r.get("class"),
+            r["class_code"],
+            r["class_name"],
+            r.get("period"),
+            r.get("description"),
+            r.get("origin"),
+            r.get("total_sherds"),
+            r.get("parallels"),
+            r.get("figures"),
+            r.get("sites"),
+            r.get("source_file"),
+        ),
+    )
+    row = con.execute("SELECT id FROM pottery_class WHERE class_code = ?", (r["class_code"],)).fetchone()
+    return int(row["id"])
+
+
 
 def load_sites(db_path: Path, sites_jsonl: Path) -> None:
     sites = read_jsonl(sites_jsonl)
@@ -476,4 +631,69 @@ def load_finds(db_path: Path, finds_jsonl: Path) -> None:
                     VALUES (?, ?, ?)
                     """,
                     (find_id, plate_number, plate_id),
+                )
+
+
+def load_classification(db_path: Path, classification_jsonl: Path) -> None:
+    records = read_jsonl(classification_jsonl)
+    with connect(db_path) as con:
+        for r in records:
+            if not r.get("class_code") or not r.get("class_name"):
+                continue
+
+            r.setdefault("source_file", classification_jsonl.name)
+            class_id = upsert_pottery_class(con, r)
+
+            # 1) Site occurrences
+            for entry in split_site_entries(r.get("sites")):
+                site_code, sherd_count, evidence, sample_codes_text = parse_site_entry(entry)
+                if not site_code:
+                    continue
+
+                site_row = con.execute("SELECT id FROM site WHERE code = ?", (site_code,)).fetchone()
+                site_id = int(site_row["id"]) if site_row else None
+
+                con.execute(
+                    """
+                    INSERT INTO pottery_class_site (
+                      pottery_class_id, site_id, site_code, sherd_count, evidence_text, sample_codes_text
+                    )
+                    VALUES (?, ?, ?, ?, ?, ?)
+                    ON CONFLICT(pottery_class_id, site_code) DO UPDATE SET
+                      site_id = COALESCE(excluded.site_id, pottery_class_site.site_id),
+                      sherd_count = COALESCE(excluded.sherd_count, pottery_class_site.sherd_count),
+                      evidence_text = COALESCE(excluded.evidence_text, pottery_class_site.evidence_text),
+                      sample_codes_text = COALESCE(excluded.sample_codes_text, pottery_class_site.sample_codes_text)
+                    """,
+                    (class_id, site_id, site_code, sherd_count, evidence, sample_codes_text),
+                )
+
+            # 2) Plate links (from figures field "Plates: ...")
+            for plate_number in extract_plate_numbers_from_figures_field(r.get("figures")):
+                plate_row = con.execute("SELECT id FROM plate WHERE number = ?", (plate_number,)).fetchone()
+                plate_id = int(plate_row["id"]) if plate_row else None
+
+                con.execute(
+                    """
+                    INSERT OR IGNORE INTO pottery_class_plate (pottery_class_id, plate_number, plate_id)
+                    VALUES (?, ?, ?)
+                    """,
+                    (class_id, plate_number, plate_id),
+                )
+
+            # 3) Figure references (roman numerals + ints)
+            for label in extract_figure_labels(r.get("figures")):
+                fig_num = int(label) if label.isdigit() else None
+                fig_id = None
+                if fig_num is not None:
+                    row = con.execute("SELECT id FROM figure WHERE number = ?", (fig_num,)).fetchone()
+                    fig_id = int(row["id"]) if row else None
+
+                con.execute(
+                    """
+                    INSERT OR IGNORE INTO pottery_class_figure_ref
+                      (pottery_class_id, figure_label, figure_number, figure_id)
+                    VALUES (?, ?, ?, ?)
+                    """,
+                    (class_id, label, fig_num, fig_id),
                 )
