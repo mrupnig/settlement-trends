@@ -11,7 +11,7 @@ ware is usually plain with very few exceptions of decorated incised sherds and p
 bands and traces of wheel making/turning. This type of ware is mainly used for funerary
 purposes but also found in settlements.
 Origin: South and south-eastern Iran; east and south-eastern Arabia
-Sites: CS.5.2.1= 4 sherds (P01 274- P01277); CS.5.1.2.1= 1 sherd (P02326); CS.5.1.2= 2
+Sites: CS.5.2.1= 4 sherds (P01274-P01277); CS.5.1.2.1= 1 sherd (P02326); CS.5.1.2= 2
 sherds (P02991- P02992); CS.4.1.3= 1 sherd (P04797); CS.5.9= 6 sherds (P05293-
 P05295 & P05297-P05899); CS.5.2.4= 1 sherd (P06303); CS.5.2.2= 5 sherds (P07208-
 P07212)
@@ -249,7 +249,7 @@ mm. This ware is abundant in the settlement sites and rare in the tombs and thus
 called the domestic coarse ware.
 Origin: Local?
 Sites: CS.2.68= 42 sherds (P00477-P00478 & P06501- P06540): CS.5.2.5= 21 sherds
-(P00714- P00716 & P05199- P05216); CS.9.2.2= 4 sherds (P01417- P01420): (S.5.1.3=
+(P00714- P00716 & P05199- P05216); CS.9.2.2= 4 sherds (P01417- P01420): CS.5.1.3=
 20 sherds (P01865- P01884); CS.3.1.4= 2 sherds (P01895- P01896): CS.3.5.2= 2 sherds
 (P02046- P02047); CS.1.5.5= 7 sherds (P02397- P02403): CS.5.2.3= 1 sherd (P03565):
 CS.5.1.5= 9 sherds (P04431- P04439): CS.5.2.4= 2 sherds (P04871- P04872):
@@ -342,11 +342,11 @@ sherds might have traces of painting or coating but badly eroded and the inner s
 some sherds have light gray colour. Walls thickness is c.1 mm-l cm. This ware is similar
 to the UMTCW but with thinner walls.
 Origin: Local?
-Sites: CS.2.69.3.9= 1 sherd (P00090); CS.5.9= 117 sherds (P0040L P05416-P05472 &
+Sites: CS.2.69.3.9= 1 sherd (P00090); CS.5.9= 117 sherds (P00401 & P05416-P05472 &
 P05815-P05873); CS.2.69.1.3 = 7 sherds (P00502-P00508); CS.2.50.2, Tomb 2= 1 sherd
 (P00622); CS.5.2.5= 53 sherds (P00734-P05284); CS.2.52.5= 47 sherds (P00966 &
 P06228-P06273): CS.2.57= 1 sherd (P01204); CS.9.5= 3 sherds (P01681-P01683):
-CS.2.41.5= 11 sherds (P01 737-P01 747); CS.5.1.3= 5 sherds (P01885-P01889); CS.1.1.-+=
+CS.2.41.5= 11 sherds (P01737-P01747); CS.5.1.3= 5 sherds (P01885-P01889); CS.1.1.4=
 6 sherds (P0I 897-P01902); CS.2.50.2= 5 sherds (P02224-P02228): CS.2.52.1 = 1 sherd
 (P02302); CS.5.1.2.1 = 54 sherds (P02335-P02340, P02346-P02348 & P051 08-P05152):
 CS.1.5.5= 12 sherds (P02404-P02415); CS.2.1 = 4 sherds (P02454-P02457): CS.2.20= 30
@@ -372,7 +372,7 @@ inclusions of 1 mm size and covers 4% of the sherd. Walls thickness is 1-5 mm. T
 is similar to the UMCW but the core is lighter and coating traces were possibly in the
 inner side of the walls?
 Origin: Local?
-Sites: CS.2.4l.10= 10 sherds (P01671-P01676 & P13290- P13293); CS.5.1.1= 14 sherds
+Sites: CS.2.41.10= 10 sherds (P01671-P01676 & P13290- P13293); CS.5.1.1= 14 sherds
 (P06342-P06355)
 Total sherds: 24 sherds
 Figures: 1 13 (E)
@@ -399,7 +399,7 @@ pink (Munsell 7.SY, 7/4), and the core is dark gray (Munsell 7.SY, 411) core wit
 brown rounded and sub-rectangular inclusions of up to 2 mm size and covers 30/0 of the
 sherd. Walls' thickness is c.1-S mm
 Origin: Local?
-Sites: CS.2.11 = 1 sherd (P00843); CS.2.S0.2= 8 sherds (P00844-P008S1)
+Sites: CS.2.11 = 1 sherd (P00843); CS.2.50.2= 8 sherds (P00844-P00851)
 Total sherds: 9 sherds, and one possible sherd from site CS.1.S.4 (P02093)
 Parallels: Velde 1992,2003; Potts 1990c: S6-9S; 1991: 36--7S
 Class Code: RYWS
@@ -439,8 +439,8 @@ fracture. The surface and core are light red (Munsell lOR, 6/8) with gray and br
 rounded inclusions of up to 1.5 mm size and covers 20/0 of the sherd. Walls thickness is
 c 1-6 mm. This ware is thin and light. Some sherds are badly eroded
 Origin: Local?
-Sites: CS.5.9= 1 sherd (P00402): CS.2.1= 1 sherd (P02'+58): CS.9.8= 10 sherds (P04881-
-P04890); CS.2A= 12 sherds (P04136-P041.+ 7)
+Sites: CS.5.9= 1 sherd (P00402): CS.2.1= 1 sherd (P02458): CS.9.8= 10 sherds (P04881-
+P04890); CS.2.4= 12 sherds (P04136-P04147)
 Total sherds: 24 sherds
 Plates: 392 (A-B)
 Parallels: Two sherds (4881, 4882) of simple flat or straight rims of possible beakers have
@@ -501,7 +501,7 @@ is reddish yellow (Munsell 5YR, 6/6) and the core is light greenish gray core (M
 CHROMA) with gray to brown, Oval to rounded inclusions of 1-2 mm size and covers
 c.2O/o of the sherd. Walls thickness is 4 mm to l.2 cm
 Origin: Local?
-Sites: CS.2.67.14= 2 sherds (P00OI2-P00OI3); CS.2.69.1.4= 1 sherd (P00284): (S.4.4=
+Sites: CS.2.67.14= 2 sherds (P00012-P00013); CS.2.69.1.4= 1 sherd (P00284): CS.4.4=
 11 sherds (P00864-P00874); CS.2.60= 6 sherds (P07321-P07326)
 Total sherds: 20 sherds
 Figures: 132 (A, C); 135 (D); 136 (A); 137 (G)
@@ -625,8 +625,8 @@ gray to brown, rounded and angular inclusions of 1--4 mm size and covers c.6% of
 sherd; Walls' thickness is c.5 mm-2 cm.
 Origin: Local?
 Sites: CS.2.68= 3 sherds (P00021-P00022 & P00026); CS.2.69.2= 5 sherds (P00068-
-P00072): CS.2.11= 9 sherds (P00097-P00104 & P00120): CS.9.5= 3 sherds (P00I52-
-P00 154): CS.2.69.1.4= 1 sherd (P00279); CS.2.50.2= .+ sherds (P00558-P00561):
+P00072): CS.2.11= 9 sherds (P00097-P00104 & P00120): CS.9.5= 3 sherds (P00152-
+P00154): CS.2.69.1.4= 1 sherd (P00279); CS.2.50.2= 4 sherds (P00558-P00561):
 CS.2.52.6= 3 sherds (P00576-P00577 & P00596); CS.3.8.1 = 1 sherd (P01623): CS.1.5.6=
 1 sherd (P02163); CS.5.7= 1 sherd (P02777); CS.2.67.11= 3 sherds (P03391-P03393);
 CS.2.67.26= 2 sherds (P03693-P03694)
@@ -648,7 +648,7 @@ size and covers c.5% of the sherd. Walls' thickness is 6 mm to 1.4 cm
 Origin: Local?
 Sites: CS.2.68= 8 sherds (P00023-P00025 & P00484-P00488); CS.2.69.2= 1 sherd
 (P00067); CS.2.69.3.9= 1 sherd (P00091); CS.2.2.1= 5 sherds (P00092-P00096); CS.9.5=
-3 sherds (P00I50-P00I51 & P00I60); CS.2.50.2= 6 sherds (P00570-P00575); CS.2.50.2,
+3 sherds (P00150-P00151 & P00160); CS.2.50.2= 6 sherds (P00570-P00575); CS.2.50.2,
 Tomb 2= 3 sherds (P00619-P00621); CS.2.52.4= 2 sherds (P00688 & P00690);
 CS.2.52.5= 1 sherd (P00910); CS.2.42.29= 1 sherd (P01361); CS.5.13, Tomb 2= 2 sherds
 (P02229-P02230); CS.2.69.1.3= 2 sherds (P02288-P02289); CS.2.52.1 =
@@ -659,7 +659,7 @@ CS.2.67.22= 4 sherds (P13713-P13716)
 Total sherds: 52 sherds
 Figures: 132 (0, F); 137 (E, F); 138 (B-C)
 Parallels: Rumeilah Settlement excavation (Boucharlat &
-Lombard 1985: pl..+ 7,
+Lombard 1985: pl.47,
 No.6,7,15; p1.48, nos.2,3; p1.52, Nos.1-3; p1.53, nos.1.8); Tell Abraq excavation: (Potts
 1991: fig. 109, pp: 82; fig. 11 0, nos.I-7, pp: 82; fig.1ll, nos. 1-4, pp: 83) & (Magee 1996:
 fig.2, pp: 243); AI-Madam area excavation: (Benoist, Cordoba & Mouton 1997: fig.5.
@@ -673,7 +673,7 @@ both surfaces of up to 1 mm size and covers c.30/0 of the sherd. Painted decorat
 and horizontal lines and bands on both surfaces, around and under the rim. neck and
 shoulder. Walls' thickness is c.4-6 mm.
 Origin: Iran? Local?
-Sites: CS.2.42.11 = 4 sherds (P00047-P00050); CS.2.67.24 = 7 sherds (P00 163-P00 169);
+Sites: CS.2.42.11 = 4 sherds (P00047-P00050); CS.2.67.24 = 7 sherds (P00163-P00169);
 CS.4.3= 1 sherd (P00203); CS.2.69.1.3= 5 sherds (P00496-P00500); CS.2.56.4= 12
 sherds (P00533-P00534 & P04546-P04555); CS.5.13, Tomb 3= 6 sherds (P00549-
 P00554); CS.2.67.9= 10 sherds (P00788-P00797); CS.5.13, Tomb 1= 1 sherd (P00888);
@@ -699,7 +699,7 @@ Sites: CS.2.68= 3 sherds (P00O 14-P00O 16); CS.3.1.3= 2 sherds (P00039-P00040):
 CS.2.11 =
 15
 sherds
-(P00 105-P00 119);
+(P00105-P00119);
 CS.2.50.2=
 8 sherds
 (P00562-P00569):
@@ -717,8 +717,8 @@ The surface is reddish yellow (Munsell 5YR, 7/8) and the core is reddish yellow 
 up to 1 cm; 60/0) and white rounded (Up to 1 mm; 1%) inclusions and traces of straw/chaff
 prints. Walls' thickness is c.5 mm to 1.5 cm.
 Origin: Local?
-Sites: CS.2.68= 2 sherds (P00O 17-P00O 18); CS.9.5= 5 sherds (P00I55-P00 159); CS.4.3=
-2 sherds (P0020 I-P00202); CS.2.56A= 7 sherds (P00535-P00537 & P04558-P04561);
+Sites: CS.2.68= 2 sherds (P00017-P00018); CS.9.5= 5 sherds (P00155-P00159); CS.4.3=
+2 sherds (P00201-P00202); CS.2.56.4= 7 sherds (P00535-P00537 & P04558-P04561);
 CS.4.13, Tomb 8= 26 sherds (P00805-P00810 & P03513-P03532); CS.2.11 = 1 sherd
 (P00838); CS.4A= 4 sherds (P00878-P00881); CS.1.5.1 = 2 sherds (P02266-P02267):
 CS.2.67.9= 1 sherd (P08070); CS.4.13, Tomb 9= 12 sherds (P11746-P11757)
@@ -737,7 +737,7 @@ mm size and covers c.5% of the sherd. Some sherds are light greenish gray (1 CHR
 711) on the inner surface (6 sherds from site CS.4.3). Walls' thickness is c.2-8 mm
 Origin: Local?
 Sites: CS.2.69.2= 1 sherd (P00065); CS.2.69.1.3= 1 sherd (P0050 1): CS.5.2.5= 1 sherd
-(P00736); CS.4.3= 24 sherds (P00 170-P00 193)
+(P00736); CS.4.3= 24 sherds (P00170-P00193)
 Total sherds: 27 sherds
 Figures: 133 (F); 138 (D)
 Parallels: Rumeilah Settlement excavation (Boucharlat & Lombard 1985: p1.52. no.4;
@@ -764,8 +764,8 @@ core is reddish yellow (Munsell SYR, 6/8) with gray to brown rounded and oval in
 of 1-2.5 mm size and covers c.5% of the sherd. Walls' thickness is c.4 mm to 1 em. Some
 sherds bear projected bands with incised finger/nail prints and herring-bone decoration.
 Origin: Local?
-Sites: CS.2.S2.6= 10 sherds (P00S86-P00S9S); CS.2.S2.S= 1 sherd (P009I2); CS.2.Sl.S=
-2 sherds (P0271S-P02716); CS.4.4= 32 sherds (P07439-P07470); CS.2.S1.8.1= IS sherds
+Sites: CS.2.S2.6= 10 sherds (P00S86-P00S9S); CS.2.52.5= 1 sherd (P00912); CS.2.51.5=
+2 sherds (P02715-P02716); CS.4.4= 32 sherds (P07439-P07470); CS.2.51.8.1= 15 sherds
 (P07483-P07497)
 Total sherds: 60 sherds
 Plates: 409
@@ -850,12 +850,12 @@ herring bones with and without hatched or pitted design; incised wavy line(s): p
 plain band(s); incised motif like sun-flower or sun with radiations? Walls' thickness is c.1
 mm to 2.4 cm.
 Origin: Local?
-Sites: CS.2.58= 4 sherds (P00350-P00351 & P00811-P00812): CS.2.6'= 1 sherd
+Sites: CS.2.58= 4 sherds (P00350-P00351 & P00811-P00812): CS.2.62= 1 sherd
 (P00748): CS.2.57= 8 sherds (P01205-P01208 & P07314-P07317): CS.2.60= 4 sherds
-(P01306-P01309); CS.9.2.2= 4 sherds (P01431-P01434); CS.2042.10= 9 sherds (P01604-
-P01612); CS.9.S= 14 sherds (P01684--P01697); CS.2.S3= 1 sherd (P01812): CS.2.43.1=-+
-sherds (P01824-P01827); CS.1.S.6= 16 sherds (P02136-P021S1): CS.2.S1.8.1= 1 sherd
-(P02290); CS.2.64= 2 sherds (P02374--P0237S); CS.1.S.S= 1 sherd (P02417): CS.2.23= -+
+(P01306-P01309); CS.9.2.2= 4 sherds (P01431-P01434); CS.2.42.10= 9 sherds (P01604-
+P01612); CS.9.5= 14 sherds (P01684-P01697); CS.2.S3= 1 sherd (P01812): CS.2.43.1= 4
+sherds (P01824-P01827); CS.1.5.6= 16 sherds (P02136-P021S1): CS.2.51.8.1= 1 sherd
+(P02290); CS.2.64= 2 sherds (P02374-P0237S); CS.1.5.5= 1 sherd (P02417): CS.2.23= 4
 sherds (P02420-P02423); CS.1.4= 4 sherds (P02469-P02472); CS.6, Tomb 6= 2 sherds
 (P0249S-
 P02496);
@@ -865,16 +865,16 @@ sherds
 (P02663-P02664
 &
 P17488-P17534);
-CS.2.51.S= 6 sherds (P02717-P02719 & P03033-P03035); CS.2.S7 .1 = 9 sherds (P02835-
+CS.2.51.5= 6 sherds (P02717-P02719 & P03033-P03035); CS.2.S7 .1 = 9 sherds (P02835-
 P02837 & P06807-P06812); CS.2.67.29= 6 sherds (P0296S-P02967 & P13717-P13719):
 CS.2.S2.2= S sherds (P03873 & P07414-P07417); CS.2.S6.S= 8 sherds (P03920-P03922
-& P13S0S-P13S09); CS.2043.2= 17 sherds (P03923-P0393S & P04896-P04899):
+& P13S0S-P13S09); CS.2.43.2= 17 sherds (P03923-P0393S & P04896-P04899):
 CS.9.1.7= 2 sherds (P04046-P04047); CS.9.2.1= 13 sherds (P04063-P04075); CS.2.3= 9
 sherds (P04148-P041S6); CSo4.1.4= 3 sherds (P04298-P04300); CS. 9.1.1 = 43 sherds
 (P04306-P04348); CSo4.9= 10 sherds (P04456-P04465); CS.2.56.7= 1 sherd (P04472):
 CS.2.56.6= 3 sherds (P04492-P04494); CS.9.1.8= IS sherds (P04565-P04579); CS.2.29=
 5 sherds (P04613-P04617); CS.2.S0.1 = S sherds (P050 19-P05023); CS.9.4= 8 sherds
-(P05024-POS031); CS.2.S1.1 = 16 sherds (P02930-P02933, POS054- P05058, P06643-
+(P05024-POS031); CS.2.51.1 = 16 sherds (P02930-P02933, POS054- P05058, P06643-
 P06648 & P08036); CS.2.68= 7 sherds (P06SS0-P06556); CS.2.50.2= 12 sherds
 (P06830-P06841); CS.2.11 = 20 sherds (P07327-P07346)
 Total sherds: 351 sherds
@@ -891,11 +891,11 @@ sherd. Walls' thickness is c.3 mm to 2 cm. Some sherds have traces of firing/bur
 the exterior surface.
 Origin: Local?
 Sites: CS.2.52.3= 1 sherd (P00827); CS.2.57= 5 sherds (P01216-P01217 & P06726-
-P06728); CS.2.60= 1 sherd (P01313); CS.2.57.1 = 3 sherds (P02843-P02845); CS.4.1.-+ =
-1 sherd (P0430 I); CS.2.56.6= 1 sherd (P04495); CS.2.56.7= 1 sherd (P04539); CS.9.1.8=
+P06728); CS.2.60= 1 sherd (P01313); CS.2.57.1 = 3 sherds (P02843-P02845); CS.4.1.4 =
+1 sherd (P04301); CS.2.56.6= 1 sherd (P04495); CS.2.56.7= 1 sherd (P04539); CS.9.1.8=
 1 sherd (P04589); CS.2.68= 2 sherds (P06557-P06558); CS.2.51.1 = 20 sherds (P06649-
-P06668); CS.4.14, Tomb 3= 2 sherds (P1 I 786-P11787); CS.9.5= 54 sherds (P1651 0-
-P16563); CS.6, Tomb 6= 10 sherds (PI 7727-PI 7736)
+P06668); CS.4.14, Tomb 3= 2 sherds (P1 I 786-P11787); CS.9.5= 54 sherds (P16510-
+P16563); CS.6, Tomb 6= 10 sherds (P17727-P17736)
 Total sherds: 102 sherds
 Figures: 148 (B, E)
 Parallels: Samad and Maysar excavations: (Yule 2001a)
@@ -909,7 +909,7 @@ Decoration includes incised leaf decoration. Walls' thickness is c.I-6 mm
 Origin: Local?
 Sites: CS.2.57= 4 sherds (P01218 & P07318-P07330); CS.9.2.2= 1 sherd (P01452);
 CS.9.5= 2 sherds (P01698-P01699); CS.2.20= 21 sherds (P02705-P02706 & P17535-
-P17553); CS. 7 .2= 1 sherd (P02827); CS.2.52A= 9 sherds (P02880-P02888); CS.2.51.1 = 6
+P17553); CS. 7 .2= 1 sherd (P02827); CS.2.52.4= 9 sherds (P02880-P02888); CS.2.51.1 = 6
 sherds (P02934 & P05067-P06672); CS.2.23= 6 sherds (P02947-P02952); CS.2.51.5= 2
 sherds (P03045-P03046); CS.2.51.8.3= 8 sherds (P03551-P03558); CS.5.1.1 = 1 sherd
 (P04188); CS.2.56.6= 2 sherds (P04496-P04497); CS.9.1.8= 5 sherds (P04594-P04598):
@@ -992,12 +992,12 @@ CS.2.43.1=
 sherds
 (P01835-P01837);
 CS.2.69.3.2= 5 sherds (P02392-P02396); CS.2.20= 27 sherds (P02704, P17608-P17633):
-CS.2.51.5= 2 sherds (P02736-P02737); CS.5.1 0, Tomb 5= 12 sherds (P02795-P02806);
+CS.2.51.5= 2 sherds (P02736-P02737); CS.5.10, Tomb 5= 12 sherds (P02795-P02806);
 CS.2.51.8.3= 14 sherds (P03537-P03550); CS.2.51.8.6= 6 sherds (P03886-P03891 ):
 CS.9.1.8= 4 sherds (P04590-P04593); CS.2.29= 14 sherds (P05699-P05712 ): CS.4.3= 13
 sherds (P07178-P07190); CS.2.1= 12 sherds (P19224-P19235)
 Total sherds: 123 sherds
-Figures: 87 (A-B): 1.+ 1 (E, G): 1.+2 (B); 143 (8, C, G); 145 (F): 147 (8, D, F): 148 (F)
+Figures: 87 (A-B): 141 (E, G): 142 (B); 143 (8, C, G); 145 (F): 147 (8, D, F): 148 (F)
 Plates: 410 (A-F); 414 (A-D)
 Parallels: Samad and Maysar excavations: (Yule 2001a)
 Class Code: DGCLIA
@@ -1077,7 +1077,7 @@ CS.2.43.3= 14 sherds (P01366-P01379); CS.9.1.5= 15 sherds (P01532-P01546);
 CS.9.1.6= 25 sherds (P0I 624-P01648); CS.2.24= 2 sherds (P01757-P01758); CS.5.1.3= 7
 sherds (P01838-P01844); CS.4.1.1= 14 sherds (P02002-P02015); CS.3.5.2= 5 sherds
 (P02055-P02059); CS.1.5.6= 5 sherds (P02100-P02104); CS.1.5.1= 14 sherds (P02231-
-P02244); CS.I.5.5= 16 sherds (P02269-P02284); CS.2.52.I = 2 sherds (P02306-P02307);
+P02244); CS.I.5.5= 16 sherds (P02269-P02284); CS.2.52.1 = 2 sherds (P02306-P02307);
 CS.5.1.2.1 = 3 sherds (P02350-P02352); CS.5.1.4= 3 sherds (P02352-P02354); CS.4.1.6=
 40 sherds (P02507-P02546); CS.4.I.5= 11 sherds (P02738-P02748); CS.1.6= 9 sherds
 (P02764-P02772); CS.5.1.6= 14 sherds (P02850-P02863); CS.3.5.3= 5 sherds (P02889-
@@ -1087,11 +1087,11 @@ CS.3.5.1= 10 sherds (P03211-P03220); CS.3.1.1= 19 sherds (P03251-P03269); CS.4.2
 CS.9.10=
 17 sherds (P03568-P03584); CS.4.12.1 = 20 sherds (P03638-P03657):
 CS.3.7.5= 6 sherds (P03700-P03705); CS.9.1.4= 12 sherds (P03892-P03903); CS.3.1.5=
-11 sherds (P03958-P03968); CS.9.1.7= 4 sherds (P0401 0-P040 13); CS.4.I.4= 36 sherds
+11 sherds (P03958-P03968); CS.9.1.7= 4 sherds (P0401 0-P040 13); CS.4.1.4= 36 sherds
 (P04190-P04225); CS.2.50.5=
 11
 sherds (P04403-P04413); CS.4.1.3= 36 sherds
-(P04654-P04689); CS.9.1.3= 6 sherds (P0481I-P04816); (S.3. 7 .3= 40 sherds (P05927-
+(P04654-P04689); CS.9.1.3= 6 sherds (P04811-P04816); CS.3.7.3= 40 sherds (P05927-
 P05966); CS.2.50.1 = 3 sherds (P06087-P06089)
 Total sherds: 637 sherds
 Figures: 152 (B-E)
@@ -1109,23 +1109,23 @@ Origin: Local?
 Sites: CS.2.68= 15 sherds (P00490-P00493 & P06591-P06601); CS.3.1.2= 28 sherds
 (P00852-P00857, P03690-P03692 & P08800-P08818); CS.4.1.1 = 10 sherds (P00858-
 P00861 & P02016-P02021); CS.3.5.2= 12 sherds (P00862, P02060-P02066 & P09859-
-P09862); CS.1.5A= 1 sherd (P00863); CS.1.5.2= 9 sherds (P01033-P01041); CS.9.1.6 =
+P09862); CS.1.5.4= 1 sherd (P00863); CS.1.5.2= 9 sherds (P01033-P01041); CS.9.1.6 =
 11 sherds (P01649-P01659); CS.5.1.3= 9 sherds (P01845-P01847 & P12671-P12676);
 CS.1.5.6= 8 sherds (P02105-P02112); CS.1.5.1 = 1 sherd (P02245); CS.4.1.6= 21 sherds
 (P02547-P02567); CS.3.5.1= 4 sherds (P03221-P03224); CS.3.7.5= 7 sherds (P03706-
-P03712); CS.9.1A= 5 sherds (P03904 & P14966-P14969); CS.2A3.2= 2 sherds (P03955-
+P03712); CS.9.1.4= 5 sherds (P03904 & P14966-P14969); CS.2.43.2= 2 sherds (P03955-
 P03956); CS.3.7.3= 5 sherds (P05900-P05904); CS.3.1.3= 15 sherds (P06006-P06020):
 CS.2.50.5= 2 sherds (P06153 & P13372); CS.7.1.3= 1 sherd (P07854); CS.1.2.1= 1 sherd
-(P08074); CS.3.1.1 = 6 sherds (P08594-P08599); CS.3 .. 1.4= 6 sherds (P09349-P09354);
+(P08074); CS.3.1.1 = 6 sherds (P08594-P08599); CS.3.1.4= 6 sherds (P09349-P09354);
 CS.3.1.5= 5 sherds (P09487-P09491); CS.3.1.6= 1 sherd (P09525); CS.3.5.3= 4 sherds
-(P10019-P10022); CS.4.1.3= 7 sherds (P10811-P10817); CS.4.1.4= 2 sherds (PII035-
-PI 1036); CS.4.12.1= 7 sherds (P11708-P11714);
+(P10019-P10022); CS.4.1.3= 7 sherds (P10811-P10817); CS.4.1.4= 2 sherds (P11035-
+P11036); CS.4.12.1= 7 sherds (P11708-P11714);
 CS.5.1.2=
 1 sherd (P12311);
 CS.5.1.2.1 = 3 sherds (P12413-P12415); CS.5.1.4= 2 sherds (P12899-P12900): CS.5.1.5=
 8 sherds (P13016-P13023); CS.5.8= 6 sherds (P13171-P13176): CS.2Al.IO= 1 sherd
-(P13289); CS.2A3.1 = 1 sherd (P13307): CS.2A3.3= 2 sherds (P13326-P13327);
-CS.2.55.1 = 3 sherds (P13484'-P13486); CS.2.55A= 3 sherds (P13497-P13499); CS.2.62=
+(P13289); CS.2.43.1 = 1 sherd (P13307): CS.2.43.3= 2 sherds (P13326-P13327);
+CS.2.55.1 = 3 sherds (P13484'-P13486); CS.2.55.4= 3 sherds (P13497-P13499); CS.2.62=
 13 sherds (P13558-P13570); CS.9.1.1= 6 sherds (P13962-P13967); CS.9.1.2= 14 sherds
 (P14314--P14327); CS.9.1.3= 11 sherds (P14711-P14721); CS.9.1.5= 9 sherds (P15251-
 P15259); CS.9.1.7= 7 sherds (P15840-P15846); CS.9.1.8= 3 sherds (P16050-P16052):
@@ -1148,7 +1148,7 @@ horizontal lines.
 Origin: Local?
 Sites: CS.1.5.1 = 5 sherds (P00313-P00317); CS.2.62= 2 sherds (P00775-P00776);
 CS.3.1.2= 18 sherds (P00940-P00957); CS.1.5.4= 2 sherds (P00998-P00999); CS.3.1.3=
-23 sherds (P01168-P01168 & P06040-P06048); CS.2.53 .1 = 11 sherds (P01316-P01318
+23 sherds (P01168-P01168 & P06040-P06048); CS.2.53.1 = 11 sherds (P01316-P01318
 & P01349-P01356); CS.9.1.5= 1 sherd (P01603); CS.9.1.6= 3 sherds (P01668-P01670):
 CS.3.7.3= 12 sherds (P01800-P01804 & P05967-P05973); CS.5.1.3= 5 sherds (P01860-
 P01864); CS.3.1.4= 19 sherds (P01953-P01971); CS.4.1.1= 4 sherds (P02033-P02036):
@@ -1174,7 +1174,7 @@ Origin: Local?
 Sites: CS.3.1.3= 20 sherds (P01182 & P06021-P06039); CS.4.1.1 = 3 sherds (P02037-
 P02039); CS.1.5.1 = 5 sherds (P02254-P02258); CS.4.1.6= 6 sherds (P02613-P02618);
 CS.4.1.5= 6 sherds (P02758-P02763); CS.3.5.1 = 14 sherds (P03237-P03250); CS.3.7.5=
-3 sherds (P03727-P03729); CS.9.1.7= 4 sherds (P04038-P04041); CS.4.I.4= 10 sherds
+3 sherds (P03727-P03729); CS.9.1.7= 4 sherds (P04038-P04041); CS.4.1.4= 10 sherds
 (P04288-P04297); CS.4.1.3= 37 sherds (P04760-P04796); CS.3.7.3= 22 sherds (P05905-
 P05926)
 Total sherds: 130 sherds
@@ -1205,7 +1205,7 @@ CS.9.1.5= 56 sherds (P01547-P01602); CS.9.1.6= 8 sherds (P01660-P01667); CS.2.24
 CS.5.1.3= 12 sherds (P01848-P01859); CS.3.1.4 = 74 sherds (P01906-P01952 &
 P0I 972-P01998); CS.4.1.1 = 11 sherds (P02022-P02032); CS.3.5.2= 24 sherds (P02067-
 P02090); CS.1.5.6= 16 sherds (P02113-P02135); CS.1.5.5= 3 sherds (P02285-P02287);
-CS.2.53.2= 7 sherds (P02313-P02319); CS.5.1A= 14 sherds (P02355-P02368); CS.4.1.6=
+CS.2.53.2= 7 sherds (P02313-P02319); CS.5.1.4= 14 sherds (P02355-P02368); CS.4.1.6=
 41 sherds (P02568-P02592 & P02619-P02634); CS.4.1.5= 9 sherds (P02749-P02757);
 CS.3.5.3= 37 sherds (P02894-P02924 & P05045-P05050); CS.2Al.9 = 12 sherds
 (P02935-P02946); CS.3.5.1 = 12 sherds (P03225-P03236); CS.3.1.1 = 34 sherds (P03270-
@@ -1256,19 +1256,19 @@ interior surface only. The original surface and the core are red (Munsell 2.5YR,
 pink (Munsell 7.5YR, 8/3). Walls' thickness is c.I mm to 1 cm. Decoration mcludes
 incisions, slip and glaze, forming geometric and floral motifs
 Origin: Iraq? Iran?
-Sites: CS.9.5= 3 sherds (P00I40-P00I42); CS.2.62= 1 sherd (P00226); CS.2.50.1= 5
+Sites: CS.9.5= 3 sherds (P00140-P00142); CS.2.62= 1 sherd (P00226); CS.2.50.1= 5
 sherds (P00285-P00289); CS.9.1.6= 11 sherds (P00367-P00374 & P15532-P15534):
 CS.4.1.3= 1 sherd (P00379); CS.1.5.2= 20 sherds (P00520-P00529 & P11964-P11973);
 CS.1.4= 1 sherd (P00437); CS.2.55.1 = 1 sherd (P00830); CS.9.4= 56 sherds (P02164-
 P02209 & P05713-P05722); CS.1.5.5= 2 sherds (P02808- P02809); CS.2.50.2= 3 sherds
 (P06906 & P13344-P13345); CS.4.1.6= 4 sherds (P07590-P07593); CS.3.5.2= 1 sherd
-(P07878); CS.2.69.2.1 = 3 sherds (P07926-P07928); CS.9.6= 96 (P07945-P07992 &
+(P07878); CS.2.69.2.1 = 3 sherds (P07926-P07928); CS.9.6= 96 sherds (P07945-P07992 &
 P17017-P17064); CS.2.68= 2 sherds (P08050 & P13722); CS.4.1.1= 1 sherd (P08059);
 CS.1.5.4= 3 sherds (P08157-P08159); CS.2.3= 1 sherd (P08476); CS.3.1.5= 8 sherds
 (P09503-P09510); CS.4.1.2= 1 sherd (P10531); CS.4.1.4= 6 sherds (PII043-PII047 &
 P19077); CS.4.1.5= 4 sherds (P11275-P11276 & P11277-P11278); CS.4.4= 1 sherd
 (P11578); CS.4.12.1= 1 sherd (P11715); CS.2.43.1= 3 sherds (P13303-P13305);
-CS.9.1.1= 9 sherds (P13953-P13961); CS.9.1.3= 2 sherds (P14735-P14736); CS.9.1.7= I
+CS.9.1.1= 9 sherds (P13953-P13961); CS.9.1.3= 2 sherds (P14735-P14736); CS.9.1.7= 1
 sherd (P15859); CS.9.2.1= 1 sherd (P16217); CS.9.2.2= 1 sherd (P16281); CS.9.10= 2
 sherds (P17453-P17454)
 Total sherds: 256 sherds
@@ -1334,7 +1334,7 @@ CS.9.8= 80 sherds (P17092-P17171); CS.9.10= 112 sherds (P17283-P17394): CS.2.24=
 25 sherds (P17663-P17687); CS.6, Tomb 6= 7 sherds (P17715-P17721); CS.5.1.6= 26
 sherds (P17769-P17794); CS.5.10, Tomb 2= 38 sherds (P17834-P17871); CS.7.1.1= 64
 sherds (P17950-P18013); CS.7.1.2= 121 sherds (P18143-P18263); CS.7.1.3= 84 sherds
-(P18405-P18488); CS.7.1A = 66 sherds (P18578-P18643); CS.7.1.5= 41 sherds
+(P18405-P18488); CS.7.1.4 = 66 sherds (P18578-P18643); CS.7.1.5= 41 sherds
 (P18764-P18804)
 Total sherds: 3178 sherds
 Figures: 165 (A-B)
@@ -1348,15 +1348,15 @@ whole body. The fabric has smooth fracture and medium firing. The surface colour
 either white or gray. Walls' thickness is c.1 mm to 8 cm.
 Origin: Local
 Sites: CS.9.10= 35 sherds (P00430 & P17395-P17428); CS.9.5= 45 sherds (P00655-
-P00667 & P16763-P16794); CS.7.1A= 36 sherds (P00672-P00676 & P18647-P18677);
+P00667 & P16763-P16794); CS.7.1.4= 36 sherds (P00672-P00676 & P18647-P18677);
 CS.3.1.2= 48 sherds (P06142-P06148 & P08722-P08762); CS.1.5= 1 sherd (P08084);
-CS.1.5A= 16 sherds (P081 07-P08122); CS.1.5.5= 42 sherds (P08188-P08229); CS.1.5.6=
+CS.1.5.4= 16 sherds (P08107-P08122); CS.1.5.5= 42 sherds (P08188-P08229); CS.1.5.6=
 21 sherds (P08299-P08319); CS.2.3= 1 sherd (P08478); CS.3.1.1 = 36 sherds (P08558-
 P08593): CS.3.1.2 = 48 sherds (P06142-P06148 & P08722-P08762); CS.3.1.3 = 55
-sherds (P08975-P09029); CS.3.1A= 58 sherds (P09202-P09259); CS.3.1.5= 4 sherds
+sherds (P08975-P09029); CS.3.1.4= 58 sherds (P09202-P09259); CS.3.1.5= 4 sherds
 (P09401-P09404): CS.3.5.1= 33 sherds (P09623-P09655); CS.3.5.2= 32 sherds (P09769-
 P09800): CS.3.5.3= 18 sherds (P09951-P09968); CS.3.7.3= 52 sherds (P10064-P10115):
-CS.3.7.5 = 27 sherds (PI 0260-Pl 0286); CS.4.1.5= 43 sherds (PII157-P11199):
+CS.3.7.5 = 27 sherds (P10260-P10286); CS.4.1.5= 43 sherds (P11157-P11199):
 CS.4.1.6= 77 sherds (P11399-P11475); CS.4.4= 4 sherds (P11574-P11577); CS.4.12.1=
 15 sherds (P11669-P11683); CS.1.5.1= 16 sherds (P11801-P11816); CS.1.5.2 = 30 sherds
 (P11974-P12003); CS.5.1.1= 2 sherds (P12128-P12129); CS.5.1.2= 18 sherds (P12233-
@@ -1403,21 +1403,21 @@ c.1 mm to 1 cm.
 Origin: China
 Sites: CS.9.5= 10 sherds (P00121-P00130); CS.2.62= 1 sherd (P00225); CS.3.1.3= 12
 sherds (P00247-P00252 & P09098-P09103); CS.7.1.2= 5 sherds (P00298-P00299 &
-P00302-P00304); CS.9.I.6= 6 sherds (P00357-P00362); CS.4.1.3= 3 sherds (P00375-
+P00302-P00304); CS.9.1.6= 6 sherds (P00357-P00362); CS.4.1.3= 3 sherds (P00375-
 P00377); CS.9.10= 7 sherds (P00403-P00408 & P00426); CS.1.4= 2 sherds (P00431-
 P00432); CS.I.5.2= 11 sherds (P005IO-P00515 & PII954-PII958); CS.3.7.1= 11 sherds
-(P00737-P00747); CS.2.55.I = 3 sherds (P00833-P00835); CS.4.12.2= 5 sherds (P01409-
+(P00737-P00747); CS.2.55.1 = 3 sherds (P00833-P00835); CS.4.12.2= 5 sherds (P01409-
 P01413); CS.9.4= 2 sherds (P02210-P02211); CS.7.1.4= 4 sherds (P02773-P02776);
-CS.1.5.5= 5 sherds (P028I5 & P08064-P08067); CS.4.I.1 = 9 sherds (P07559-P07560 &
+CS.1.5.5= 5 sherds (P028I5 & P08064-P08067); CS.4.1.1 = 9 sherds (P07559-P07560 &
 P0805I-P08057); CS.4.1.6= 3 sherds (P07602-P07604); CS.2.24= 1 sherd (P07616);
 CS.5.1.6= 5 sherds (P07768-P07772); CS.3.5.2= 7 sherds (P07887-P07893); CS.9.6= 4
-sherds (P07996-P07999); CS.3.1.5= 1 sherd (P09492); CS.5.1.2.I = 6 sherds (P12468-
-P12473); CS.5.1.3= 7 sherds (P12763-P12765 & P12800-P12803); CS.5.I.4= 1 sherd
-(P12898); CS.5.I.5= 1 sherd (P13024); CS.5.8= 7 sherds (P13164-P13170); CS.2.43.1= 1
+sherds (P07996-P07999); CS.3.1.5= 1 sherd (P09492); CS.5.1.2.1 = 6 sherds (P12468-
+P12473); CS.5.1.3= 7 sherds (P12763-P12765 & P12800-P12803); CS.5.1.4= 1 sherd
+(P12898); CS.5.1.5= 1 sherd (P13024); CS.5.8= 7 sherds (P13164-P13170); CS.2.43.1= 1
 sherd (P13306); CS.9.1.1= 4 sherds (P13968-P13971); CS.9.1.2= 8 sherds (P14306-
 P14313); CS.9.1.3= 1 sherd (P14722); CS.9.1.5= 2 sherds (P15260-P15261); CS.9.1.7 = 8
 sherds (P15829-P15836); CS.9.2.1= 7 sherds (P16205-P16211); CS.9.2.2= 2 sherds
-(P16279-P16280); CS.7.1.1= 1 sherd (PI 8042)
+(P16279-P16280); CS.7.1.1= 1 sherd (P18042)
 Total sherds: 175 sherds
 Figures: 164 (A-G); 165 (C)
 Plates: 434
@@ -1447,7 +1447,7 @@ sherds (P07536-P07539 & P13525-P13540); CS.2.54= 3 sherds (P07542 & P13453-
 P13454); CS.2.43.1 = 5 sherds (P07544 & P13295-P13298); CS.2.24= 1 sherd (P07617);
 CS.5.1.6= 23 sherds (P07766-P07767 & P17748-P17768); CS.7.2= 6 sherds (P07795-
 P07800); CS.2.60= 1 sherd (P07877); CS.9.6= 62 sherds (P08017-P08035 & P16814-
-P16856); CS.1.5.4= 7 sherds (P08085-P08091); CS.1.5.5= P08160-P08187): CS.1.6= 8
+P16856); CS.1.5.4= 7 sherds (P08085-P08091); CS.1.5.5= 27 sherds (P08160-P08187): CS.1.6= 8
 sherds (P08408-P08415); CS.2.3= 1 sherd (P08477); CS.2.6= 3 sherds (P08504-P08506);
 CS.3.1.1 = 36 sherds (P08522-P08557); CS.3.1.2 = 76 sherds (P06135-P06141 &
 P08653-P08721); CS.3.1.4 = 68 sherds (P09134-P09201); CS.3.1.5= 43 sherds (P09358-
@@ -1549,21 +1549,21 @@ Europe. The tradition might be developed from the Far Eastern porcelain. This cl
 largely produced and exported to widespread area, including the Oman Peninsula in which
 it had been used until the late 1970s. It is decorated with painted and glazed geometric and
 floral motifs. The ware itself is thin and medium fired with smooth fracture. Walls'
-thickness is c.I-8 mm.
+thickness is c.1-8 mm.
 Origin: Europe
-Sites: CS.9.S= 7 sherds (P00I43-P00I49); CS.2.62= 2 sherds (P00227-P00228):
-CS.7.1.2= 6 sherds (P00305-P0031 0); CS.9.1.6= 4 sherds (P00363-P00366); CS.1.4= -+
-sherds (P00433-P00436); CS.2.S5.1 = :2 sherds (P00836-P00837): CS.5.13, Tomb 1= 2
-sherds (P00889-P00890); CS.7.1.4= 3 sherds (P04I81-P04183); CS.4.1.I= 17 sherds
+Sites: CS.9.5= 7 sherds (P00143-P00149); CS.2.62= 2 sherds (P00227-P00228):
+CS.7.1.2= 6 sherds (P00305-P0031 0); CS.9.1.6= 4 sherds (P00363-P00366); CS.1.4= 4
+sherds (P00433-P00436); CS.2.55.1= 2 sherds (P00836-P00837): CS.5.13, Tomb 1= 2
+sherds (P00889-P00890); CS.7.1.4= 3 sherds (P04181-P04183); CS.4.1.1= 17 sherds
 (P07545-P07558 & P08061-P08063); CS.4.1.6= 1 sherd (P07605); CS.4.1.5= 38 sherds
 (P07637-P07674); CS.5.1.6= 1 sherd (P07765); CS.7.1.3= 3 sherds (P07847-P07840);
 CS.2.57= 1 sherd (P07930); CS.9.6= 2 sherds (P08000-P0800I); CS.3.1.4= 1 sherd
-(P09357); CS.4.5= 4 sherds (PI 1622-PI 1625); CS.5.1.2.1= 2 sherds (P12476-P12477):
-CS.5.1.3= 6 sherds (P12781-P12786); CS.5.1.4= 1 sherd (P129I4); CS.5.1.5= 3 sherds
+(P09357); CS.4.5= 4 sherds (P11622-P11625); CS.5.1.2.1= 2 sherds (P12476-P12477):
+CS.5.1.3= 6 sherds (P12781-P12786); CS.5.1.4= 1 sherd (P12914); CS.5.1.5= 3 sherds
 (P13034--P13036); CS.5.8= 4 sherds (P13177-P13I80); CS.2.55.4= 2 sherds (P13503-
-P13504); CS.9.1.I= 3 sherds (P13972-P13974); CS.9.1.2= 2 sherds (P14358-P14359);
+P13504); CS.9.1.1= 3 sherds (P13972-P13974); CS.9.1.2= 2 sherds (P14358-P14359);
 CS.9.1.7= 3 sherds (P15826-P15828); CS.9.2.1= 3 sherds (P16212-P16214); CS.9.2.2= 4
-sherds (P16275-P16278); CS.9.IO= 1 sherd (P17455); CS.7.1.I= 3 sherds (P18043-
+sherds (P16275-P16278); CS.9.1O= 1 sherd (P17455); CS.7.1.1= 3 sherds (P18043-
 P18045); CS.4.1.4 = 4 sherds (PI 9073-P19076)
 Total sherds: 139 sherds
 Plates: 439
@@ -1577,7 +1577,7 @@ widespread area, including the Oman Peninsula in which has been used for long ti
 until recent times. Walls' thickness is c.1 mm to 1 cm.
 Origin: Far East origin (mainly Japan in the 20 th century)
 Sites: CS.4.1.1 = 32 sherds (P00080-P00083, P07563-P07589 & P08058); CS.9.5= 3
-sherds (P00 131-P00 133); CS.2.62= 5 sherds (P00229-P00233); CS. 7.1.2= 8 sherds
+sherds (P00131-P00133); CS.2.62= 5 sherds (P00229-P00233); CS. 7.1.2= 8 sherds
 (P00292-P00297 & P00300-P00301); CS.1.5.1 = 6 sherds (P00318-P00323); CS.4.1.3= 1
 sherd (P00378); CS.9.10= 2 sherds (P00409 & P17452); CS.1.5.2= 8 sherds (P00516-
 P00519 & P11959-P11962); CS.4.12.2= 1 sherd (P01407); CS.1.5.5= 2 sherds (P02807 &
@@ -1592,7 +1592,7 @@ P09486); CS.3.1.6= 2 sherds (P09518-P09519); CS.3.7.3= 1 sherd (P10219); CS.4.1.
 sherds (PII048-P11051); CS.4.12.1= 1 sherd (P11716); CS.5.1.1 = 7 sherds (P12136-
 P12142); CS.5.1.2= 11 sherds (P12293-P12303); CS.5.1.2.1= 2 sherds (P12474-P12475):
 CS.5.1.3= 15 sherds (P12766-P12780); CS.5.1.4= 5 sherds (P12909-P12913); CS.5.1.5=
-6 sherds (P13028-P13033); CS.2A3.3= 1 sherd (P13330); CS.2.52A= 1 sherd (P13408);
+6 sherds (P13028-P13033); CS.2A3.3= 1 sherd (P13330); CS.2.52.4= 1 sherd (P13408);
 CS.2.64= 2 sherds (P13606-P13607); CS.9.1.1= 1 sherd (P13975); CS.9.1.2= 1 sherd
 (P14360); CS.9.1.6= 1 sherd (P15535); CS.9.1.7= 3 sherds (P15837-P15839); CS.9.2.1=
 1 sherd (P16215); CS.9A= 1 sherd (P16507); CS.9.8= 2 sherds (P17172-P17173);
@@ -1610,14 +1610,14 @@ sherd. Decoration includes incised wavy and horizontal lines. Walls' thickness i
 mm.
 Origin: Iran & Iraq? Local?
 Sites: CS.5.2.5= 4 sherds (P07543 & P13080-P13082); CS.7.2= 46 sherds (P07801-
-P07846); CS.1.5A= 15 sherds (P08092-P08106); CS.1.5.5= 2 sherds (P08256-P08257);
-CS.I.5.6= 34 sherds (P08320-P08353); CS.I.8= 5 sherds (P08423-P08427): CS.3.1.1 = 6
+P07846); CS.1.5.4= 15 sherds (P08092-P08106); CS.1.5.5= 2 sherds (P08256-P08257);
+CS.1.5.6= 34 sherds (P08320-P08353); CS.I.8= 5 sherds (P08423-P08427): CS.3.1.1 = 6
 sherds (P08600-P08605); CS.3.1.2= 8 sherds (P08792-P08799); CS.3.1.3= 17 sherds
 (P091 04-P09120); CS.3.1.4= 11 sherds (P09338-P09348); CS.3.1.5= 10 sherds (P09493-
-P09502); CS.3.1.6 = sherds (P09520-P09524); CS.3.5.1 = 16 sherds (P09719-P09734):
+P09502); CS.3.1.6 = 5 sherds (P09520-P09524); CS.3.5.1 = 16 sherds (P09719-P09734):
 CS.3.5.2= 9 sherds (P09801-P09809); CS.3.5.3= 18 sherds (P09933-P09950); CSJ.7.3=
 22 sherds (P10197-P10218); CS.3.7.5= 8 sherds (P10336-P10343): CS.4.1.1= 4 sherds
-(PI 0497-Pl 0500); CS.4.1.2= 1 sherd (P10538); CS.4.1.3= 7 sherds (P10804-P10810):
+(P10497-P10500); CS.4.1.2= 1 sherd (P10538); CS.4.1.3= 7 sherds (P10804-P10810):
 CS.4.1.4 = 54 sherds (P10983-PII034 & P19082-P19083); CS.4.1.5 = 51 sherds
 (P11224-P11274); CS.4.1.6= 10 sherds (P11500-P11509); CS.4.5= 29 sherds (P11593-
 P11621): CS.4.12.1= 13 sherds (P11717-P11729); CS.1.5.1= 2 sherds (P11817-P11818):
@@ -1644,7 +1644,7 @@ both Late Islamic and Recent periods in which it was difficult to assign them wi
 certainty to any of these two periods. Thus, they were classified under the broader
 chronological period between both Late Islamic and Recent.
 Origin: Local?
-Sites: CS.2.54= 16 sherds (P00OO I-P00008 & P13459-P13466): CS.2.68= 2 sherds
+Sites: CS.2.54= 16 sherds (P00001-P00008 & P13459-P13466): CS.2.68= 2 sherds
 (P00027-P00028); CS.2.69.2= 2 sherds (P00074-P00075); CS.9.5= 46 sherds (P00I61-
 P00 162, P00648-P00654 & P01700-P01736); CS.4.1.3= 50 sherds (P00380-P00381 &
 P10820-P10867); CS.9.10= 37 sherds (P00421-P00425 & P17456-P17487): CS.1.4= 4
@@ -1674,9 +1674,9 @@ CS.4.1.6= 63 sherds (P11510-P11572); CS.1.5.1= 42 sherds (P11858-P11899); CS.1.5
 49 sherds (P12068-P121 16); CS.5.1.1 = 44 sherds (P12143-P12186); CS.5.1.3= 29 sherds
 (P12804-P12832); CS.5.1.5= 26 sherds (P13049-P13074); CS.5.8= 24 sherds (P13181-
 P13204); CS.2A3.3= 5 sherds (P13331-P13335); CS.9.1.3= 46 sherds (P14737-P14782);
-CS.9.1A= 24 sherds (P14972-P14995); CS.9.1.5= 40 sherds (P15281-P15320); CS.9.1.6=
+CS.9.1.4= 24 sherds (P14972-P14995); CS.9.1.5= 40 sherds (P15281-P15320); CS.9.1.6=
 40 sherds (P15536-P15575); CS.9.1.7= 14 sherds (P15576-P15589); CS.7.1.1 = 15 sherds
-(P18062-P18076); CS. 7 .1.3= 16 sherds (P18531-P18546); CS.7 .1.4= 34 sherds (P18691-
+(P18062-P18076); CS. 7 .1.3= 16 sherds (P18531-P18546); CS.7.1.4= 34 sherds (P18691-
 P18724); CS.7.1.5= 17 sherds (P18806-P18822)
 Total sherds: 1705 sherds
 Parallels: ?
@@ -1687,7 +1687,7 @@ Description: This class includes all the unidentifiable earthenware sherds that 
 or traces of glaze. These are small and/or badly eroded. Walls' thickness varies between 1
 mm and 1 cm.
 Origin: ?
-Sites: CS.9.5= 6 sherds (P00I34-P00I39); CS.7.1.2= 1 sherd (P003l1); CS.9.10= 15
+Sites: CS.9.5= 6 sherds (P00134-P00139); CS.7.1.2= 1 sherd (P00311); CS.9.10= 15
 sherds (P00410-P00420 & P17434-P17437); CS.1.4= 1 sherd (P00443); CS.2.55.1= 2
 sherds (P00831-P00832); CS.4.1.1 = 3 sherds (P07561-P07562 & P08060); CS.4.1.6= 8
 sherds (P07594-P07601); CS.4.1.5= 4 sherds (P07745-P07748); CS.7.1.3= 4 sherds
@@ -1697,10 +1697,10 @@ sherds (P08651-P08652); CS.3.1.2= 3 sherds (P08819-P08821); CS.3.1.3= 13 sherds
 (P09121-P09133); CS.3.1.4 = 19 sherds (P09319-P09337); CS.3.5.1= 4 sherds (P09735-
 P09738); CS.3.5.2= 8 sherds (P09851-P09858); CS.3.5.3= 4 sherds (P10023-P10026);
 CS.3.7.3= 11 sherds (P10220-P10230); CS.3.7.5= 21 sherds (P10315-P10335); CS.4.1.3=
-2 sherds (P10818-P10819); CS.4.1.4= 10 sherds (P11037-PII042); P19078-P19081);
-CS.4.9= 1 sherd (PI 1636); CS.5.1.2= 5 sherds (P12306-P12310); CS.5.1.3= 13 sherds
+2 sherds (P10818-P10819); CS.4.1.4= 10 sherds (P11037-P11042 & P19078-P19081);
+CS.4.9= 1 sherd (P11636); CS.5.1.2= 5 sherds (P12306-P12310); CS.5.1.3= 13 sherds
 (P12787-P12799); CS.5.1.4= 1 sherd (P12901); CS.5.1.5= 2 sherds (P13037-P13038);
-CS.2.43.3 = 1 sherd (P13329); CS.2.50.2= 1 sherd (P13346); CS.2.51.7 .1 = 1 sherd
+CS.2.43.3 = 1 sherd (P13329); CS.2.50.2= 1 sherd (P13346); CS.2.51.7.1 = 1 sherd
 (P13379); CS.2.52.3= 1 sherd (P13398); CS.2.60= 4 sherds (P13521-P13524); CS.9.1.1=
 10 sherds (P13976-P13985); CS.9.1.2= 10 sherds (P14328-P14337); CS.9.1.3= 12 sherds
 (P14723-P14734); CS.9.1.4= 2 sherds (P14970-P14971); CS.9.1.5= 9 sherds (P15262-
