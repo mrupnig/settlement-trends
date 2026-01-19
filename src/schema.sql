@@ -315,3 +315,32 @@ CREATE TABLE IF NOT EXISTS pottery_class_figure_ref (
 );
 
 CREATE INDEX IF NOT EXISTS ix_pcf_figure_id ON pottery_class_figure_ref(figure_id);
+
+-- Unique sample codes (Pxxxxx)
+CREATE TABLE IF NOT EXISTS pottery_sample (
+  id         INTEGER PRIMARY KEY,
+  code       TEXT NOT NULL,         -- e.g. "P10336"
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  CONSTRAINT uq_pottery_sample_code UNIQUE (code)
+);
+
+-- Link: which samples support which pottery class occurrence at a site
+CREATE TABLE IF NOT EXISTS pottery_class_site_sample (
+  pottery_class_id INTEGER NOT NULL,
+  site_code        TEXT NOT NULL,
+  sample_id        INTEGER NOT NULL,
+
+  PRIMARY KEY (pottery_class_id, site_code, sample_id),
+
+  CONSTRAINT fk_pcss_occ FOREIGN KEY (pottery_class_id, site_code)
+    REFERENCES pottery_class_site(pottery_class_id, site_code)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+
+  CONSTRAINT fk_pcss_sample FOREIGN KEY (sample_id)
+    REFERENCES pottery_sample(id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
+
+CREATE INDEX IF NOT EXISTS ix_pcss_sample_id ON pottery_class_site_sample(sample_id);
