@@ -39,6 +39,8 @@ PLATE_NUM_RE = re.compile(r"\b(\d{1,4})\b")
 # Figure references: can be digits or roman numerals like "III"
 FIG_LABEL_RE = re.compile(r"\b(\d{1,4}|[IVXLCDM]{1,8})\b", re.IGNORECASE)
 
+CS_PREFIX_ONLY = re.compile(r"^CS\.\d+$", re.IGNORECASE)
+
 
 _ROMAN = {"I":1,"II":2,"III":3,"IV":4,"V":5,"VI":6,"VII":7,"VIII":8,"IX":9,"X":10,"XI":11,"XII":12}
 def _parse_count_token(tok: str) -> int | None:
@@ -580,14 +582,32 @@ def load_site_map_links(db_path: Path, links_jsonl: Path) -> None:
     links = read_jsonl(links_jsonl)
     with connect(db_path) as con:
         for link in links:
-            site = con.execute("SELECT id FROM site WHERE code = ?", (link["site_code"],)).fetchone()
-            mp = con.execute("SELECT id FROM map WHERE number = ?", (link["map_number"],)).fetchone()
-            if not site or not mp:
+            raw_code = link["site_code"].upper().strip()
+            map_number = link["map_number"]
+
+            mp = con.execute("SELECT id FROM map WHERE number = ?", (map_number,)).fetchone()
+            if not mp:
                 continue
-            con.execute(
-                "INSERT OR IGNORE INTO site_map (site_id, map_id) VALUES (?, ?)",
-                (int(site["id"]), int(mp["id"])),
-            )
+            map_id = int(mp["id"])
+
+            # 1) Direct match (CS.1.1 etc.)
+            site = con.execute("SELECT id FROM site WHERE code = ?", (raw_code,)).fetchone()
+            if site:
+                con.execute(
+                    "INSERT OR IGNORE INTO site_map (site_id, map_id) VALUES (?, ?)",
+                    (int(site["id"]), map_id),
+                )
+                continue
+
+            # 2) Prefix expansion (CS.1 -> all CS.1.*)
+            if CS_PREFIX_ONLY.match(raw_code):
+                like = f"{raw_code}.%"
+                rows = con.execute("SELECT id FROM site WHERE code LIKE ?", (like,)).fetchall()
+                for r in rows:
+                    con.execute(
+                        "INSERT OR IGNORE INTO site_map (site_id, map_id) VALUES (?, ?)",
+                        (int(r["id"]), map_id),
+                    )
 
 
 def load_site_plate_links(db_path: Path, links_jsonl: Path) -> None:
