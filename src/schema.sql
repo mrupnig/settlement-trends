@@ -344,3 +344,19 @@ CREATE TABLE IF NOT EXISTS pottery_class_site_sample (
 );
 
 CREATE INDEX IF NOT EXISTS ix_pcss_sample_id ON pottery_class_site_sample(sample_id);
+
+CREATE TABLE IF NOT EXISTS coords (
+  id         INTEGER PRIMARY KEY,   -- wir setzen = site.id
+  site_id    INTEGER NOT NULL UNIQUE,
+  code       TEXT NOT NULL UNIQUE,  -- site.code
+
+  latitude   REAL NOT NULL DEFAULT 0,
+  longitude  REAL NOT NULL DEFAULT 0,
+
+  CONSTRAINT fk_coords_site FOREIGN KEY (site_id)
+    REFERENCES site(id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
+
+CREATE INDEX IF NOT EXISTS ix_coords_code ON coords(code);

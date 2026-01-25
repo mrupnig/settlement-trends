@@ -18,6 +18,7 @@ from .load_db import (
     load_typology,
     load_finds,
     load_classification,
+    load_coords,
 )
 
 
@@ -88,6 +89,8 @@ def cmd_load() -> None:
     load_typology(DB_PATH, INTERIM_DIR / "typology.jsonl")
     load_finds(DB_PATH, INTERIM_DIR / "finds.jsonl")
     load_classification(DB_PATH, INTERIM_DIR / "classification.jsonl")
+    
+    load_coords(DB_PATH, utm_epsg=32640)
 
 
     print("Loaded interim JSONL into SQLite (including image metadata).")

@@ -5,6 +5,8 @@ from pathlib import Path
 import hashlib
 import re
 
+from pyproj import Transformer
+
 
 from .db import connect
 
@@ -793,3 +795,44 @@ def load_classification(db_path: Path, classification_jsonl: Path) -> None:
                     """,
                     (class_id, label, fig_num, fig_id),
                 )
+
+
+def load_coords(db_path: Path, utm_epsg: int = 32640) -> None:
+    """
+    Create/refresh coords table from site.utm_easting/northing.
+
+    Default EPSG:32640 = UTM zone 40N (WGS84), passend für Nord-Oman.
+    Missing UTM -> lat/lon = 0/0 (wie in coords.csv).
+    """
+    transformer = Transformer.from_crs(f"EPSG:{utm_epsg}", "EPSG:4326", always_xy=True)
+
+    with connect(db_path) as con:
+        rows = con.execute(
+            "SELECT id, code, utm_easting, utm_northing FROM site ORDER BY id"
+        ).fetchall()
+
+        for r in rows:
+            site_id = int(r["id"])
+            code = r["code"]
+            e = r["utm_easting"]
+            n = r["utm_northing"]
+
+            if e is None or n is None:
+                lat = 0.0
+                lon = 0.0
+            else:
+                # pyproj returns (lon, lat) when always_xy=True
+                lon, lat = transformer.transform(float(e), float(n))
+
+            # id in coords soll identisch zu site.id sein (wie in coords.csv)
+            con.execute(
+                """
+                INSERT INTO coords (id, site_id, code, latitude, longitude)
+                VALUES (?, ?, ?, ?, ?)
+                ON CONFLICT(site_id) DO UPDATE SET
+                  code = excluded.code,
+                  latitude = excluded.latitude,
+                  longitude = excluded.longitude
+                """,
+                (site_id, site_id, code, float(lat), float(lon)),
+            )
