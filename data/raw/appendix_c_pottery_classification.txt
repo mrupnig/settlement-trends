@@ -290,7 +290,7 @@ Figs. 132: 65; 134: 66; Frifelt 1979b: figs. 6-7: 47); al-Sufouh (Benton 1996: f
 Tomb A at Hili North (Cleuziou & Vogt 1985: figs. 9: 270)
 Class Code: UMRYW
 Class Name: Umm an-Nar Reddish Yellow Ware
-Period: U.N ar
+Period: U.Nar
 Description: Thick, well fired reddish yellow coarse ware with conchoidal fracture. The
 surface is reddish yellow (Munsell 7.5YR, 7/6), and the core is reddish yellow (Munsell
 7.5YR, 7/6) to gray (Munsell 5YR, 6/1). The ware includes gray and brown rounded (1-2
@@ -1016,7 +1016,7 @@ Figures: 147 (H)
 Parallels: Samad and Maysar excavations: (Yule 2001a)
 Class Code: IRON?
 Class Name: Unidentifiable Iron Ware
-Period: fA
+Period: IA
 Description: Coarse, medium-fired ware with smooth fracture and red to yellowish
 surfaces and gray to light gray core. These sherds are of Iron Age but it was difficult to
 sign them either to Early or Late Iron Age.
@@ -1061,7 +1061,7 @@ Parallels: Turquoise Glaze ware from Kush and al-Mataf (Kennet 2004: 29-3 L fig.
 # MIDDLE ISLAMIC PERIOD
 Class Code: VCGMI
 Class Name: Very Coarse Gritted Middle Islamic
-Period: M.1slamic
+Period: M.Islamic
 Description: Thick, heavy and very coarse ware with rough fracture and medium firing.
 The surface is red (Munsell 2.5YR, 6/8) to reddish yellow (Munsell 5YR, 7/8), and the
 core is reddish yellow (Munsell 5YR, 7/8) to light gray (Munsell 5YR, 7II) with large
@@ -1098,7 +1098,7 @@ Figures: 152 (B-E)
 Parallels: Kush: Red Speckled ware (Kennet 2004: 64; figAO, pp: 134
 Class Code: NMIW
 Class Name: Nabhani Middle Islamic Ware
-Period: M.1slamic
+Period: M.Islamic
 Description: Red and gray thin coarse ware with smooth fracture and medium firing. The
 surface is light red (Munsell lOR, 6/6) to reddish gray (Munsell lOR, 611), and the core is
 light red (Munsell lOR, 6/8) with gray and brown rounded inclusions of up to 2 mm size
@@ -1166,7 +1166,7 @@ Plates: 426 (A, B, E)
 Parallels: Kush: Spotty ware (Kennet 2004: 64; fig.38, pp: 132)
 Class Code: YCWMI
 Class Name: Yellowish Coarse Ware Middle Islamic
-Period: M.1slamic
+Period: M.Islamic
 Description: Medium coarse, yellowish ware with smooth fracture and medium firing.
 The surface and the core are pale yellow (Munsell 2.5Y, 8/3) with gray rounded inclusions
 of up to 2 mm size and covers 2% of the sherd. Walls' thickness is c.1 mm to I cm.
@@ -1184,7 +1184,7 @@ Parallels: similar to Kush: Cream pots (Kennet 2004: 64; figs.39, pp: 133) but w
 incised decoration
 Class Code: CMI
 Class Name: Coarse Middle Islamic
-Period: M.1slamic
+Period: M.Islamic
 Description: Medium coarse ware with smooth fracture and hard firing. The surface is
 light red (Munsell lOR, 6/6 and 2.5YR, 7/6) to greenish gray (Munsell 1CHROMA, 6/1 l.
 and the core is light red (Munsell lOR, 7/6) to light gray (Munsell lOR, 711)
@@ -1224,7 +1224,7 @@ Parallels: Kush: Cream pots with incised wavy decoration (Kennet 2004: 64; figs.
 133)
 Class Code: FWMI
 Class Name: Fine Ware Middle Islamic
-Period: M.1slamic
+Period: M.Islamic
 Description: Thin plain red fine ware with smooth fracture and hard firing. The surface is
 red (Munsell 2.5YR, 6/8), and the core is red (Munsell 2.5YR, 6/8) to light gray (Munsell
 lOR, 711) with gray rounded inclusions of up to 1.5 mm size and covers 20/0 of the sherd.
@@ -1502,7 +1502,7 @@ Parallels: No parallels with the blue colour but the fabric is similar to the ab
 Bahia ware with parallels from al-Mataf (Kennet 2004: 42-43)
 Class Code: CELADON
 Class Name: Celadon Stone Ware
-Period: L.1slamic
+Period: L.Islamic
 Description: This ware is well-defined through the literature as "Longquan Celadon".
 Kennet (2004: 49) states that "Longquan Celadon has a good quality, light grey stoneware
 body covered in a thick green glaze that often crazes very finely. There is some variation

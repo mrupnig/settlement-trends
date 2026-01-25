@@ -112,7 +112,7 @@ The site yielded a number of pottery sherds including 22 Late Iron Age; three La
 and four Recent as well as other Islamic sherds (Middle to Recent). In addition, Tomb 1
 yielded a pierced red cylindrical bead (W.D.013: Plate 48, Figure 59); l.1 cm long and 5
 mm diameter.
-AI-Fulayj CS.1.5 (068283/2529117), Figure 90:
+AI-Fulayj CS.1.5 (0682830/2529117), Figure 90:
 Size: 187.5 ha.
 Structures:
 This is al-Fulayj's main date palm village. It was divided into five areas for pottery pick up
@@ -277,7 +277,7 @@ The site yielded a large number of Islamic pottery sherds in which a collection 
 including 148 Middle Islamic, 255 Late Islamic and one Recent. There are also other
 possible Middle to Recent sherds were collected. There is also a large number of slag
 resulted from the copper smelting.
-AI-Khurais CS.3.8 (060366112517411), Figure 92:
+AI-Khurais CS.3.8 (0603661/2517411), Figure 92:
 Size: 65.25 ha.
 Structures:
 Two black rocky hills located around 40 m west of al-Khurais village and on the eastern
@@ -324,7 +324,7 @@ Andam near Khadra Bani Dafa'a, from the north-western and southern parts (Plates
 houses, while the northern part includes the few remaining modern houses. The area is
 surrounded by black rocky hills. The survey results yielded the following group of sites
 (Map 40):
-AI-Qaryatain CS.4.1 (059565112532231), Figure 93:
+AI-Qaryatain CS.4.1 (0595651/2532231), Figure 93:
 Size: 314.5 ha.
 Structures:
 This includes al-Qaryatain village with the large very dense date palm groves located on a
@@ -552,7 +552,7 @@ This site includes only one cairn with white creamy soil similar to those found 
 previous sites.
 Finds:
 No finds
-AI-Qaryatain CS.4.19 (05971884/2531049):
+AI-Qaryatain CS.4.19 (0597188/2531049):
 Size: 6-7 m
 Structures:
 The site consists of two Hafit cairns very similar in size and construction. They are located
@@ -672,7 +672,7 @@ each other by a possible stone wall around 80 em thick; however, three of them a
 isolated.
 Finds:
 No finds
-AI-Khashbah CS.5.4 (060618112507367), Figure 51:
+AI-Khashbah CS.5.4 (0606181/2507367), Figure 51:
 Size: 3 ha.
 Structures:
 Here are 12 yellow cairns built of yellow limestone slabs with two or more circular \\alls
@@ -707,7 +707,7 @@ the asphalt road (Plates 288). The cairns are 8 m to 12 m in diameter and built 
 and grey stones with a maximum dimension of 30 cm.
 Finds:
 No finds
-AI-Khashbah CS.5.7 (060722112506844), Figure 51:
+AI-Khashbah CS.5.7 (0607221/2506844), Figure 51:
 Size: 20 m diameter
 Structures:
 This is a badly disturbed round Umm an-Nar tower found east of the village (Plate 50). It
@@ -759,7 +759,7 @@ its thickness may possibly indicate a dam? The wall is around 8 m long and 3 m t
 Finds:
 Among the collected pottery sherds from this site are six Middle Islamic and 88 Late
 Islamic sherds with few other possible Islamic sherds.
-AI-Khashbah CS.5.9 (060525112506155), Figure 51:
+AI-Khashbah CS.5.9 (0605251/2506155), Figure 51:
 Size: 32.5 ha.
 Structures:
 Site CS.5.9 is a burial ground with tombs of yellow stones and around 6 m to 8 m in
@@ -872,7 +872,7 @@ structures. In addition, a group of piled stones was found close to the structur
 have diameters of 80 cm to 1m and heights of 10 cm to 20 cm.
 Finds:
 The only tomb yielded material is Tomb 4 that yielded ten Late Iron Age pottery sherds.
-AI-Khashbah CS.5.16 (060334112507996):
+AI-Khashbah CS.5.16 (0603341/2507996):
 Size: ?
 Structures:
 The site consists of a group of piled stones of different sizes and shapes in which several
@@ -922,7 +922,7 @@ cemeteries were found and defined by modern cemented walls, which may indicate t
 they were used by groups of people or tribes. The surrounding area that was surve) ed
 away from the village is 5 km 2 from Barzaman toward Mahout (06 I 2892/2460717). The
 survey within and around this village yielded the following sites (Maps 43):
-Barzaman CS.7.1 (061023112466397), Figure 94:
+Barzaman CS.7.1 (0610231/2466397), Figure 94:
 Size: 731.25 ha.
 Structures:
 This is the main village with its date palm groves and houses. It was divided into five
@@ -1071,7 +1071,7 @@ within its spoil. The well-section is around 3 m wide and around 2.50 m deep (Pl
 Finds:
 Among the collected sherds from the well-section and its spoil are 76 Umm an-Nar, eight
 Late Iron Age, three Early Islamic, 81 Middle Islamic, 30 Late Islamic and one Recent.
-Ar-Rawdhah CS.9.5 (062563112532976), Figure 95:
+Ar-Rawdhah CS.9.5 (0625631/2532976), Figure 95:
 Size: 56.25 ha.
 Structures:
 The site includes a date palm grove with a modern house, and an old fortified wall (Sur)
@@ -1216,7 +1216,7 @@ site also includes four black Hafit cairns on top of a black rocky hill east of 
 Finds:
 Among the collected pottery sherds from the surface of this tomb field are nine Umm an-
 Nar, one possible Wadi Suq and 22 Late Iron Age sherds.
-Siyudian CS.2.2 (0622510/254692):
+Siyudian CS.2.2 (0622510/2546920):
 Size: ?
 Structures:
 The site includes eight cairns on top of black rocky hills that are surrounded by date palm
@@ -1235,7 +1235,7 @@ of other channels. The area is covered with a large number of pottery sherds.
 Finds:
 Among the collected pottery sherds from this site are 21 Late Iron Age, one Middle
 Islamic, 38 Late Islamic, six Recent and 25 other possible Islamic sherds.
-Siyudian CS.2.4 (062162112547958):
+Siyudian CS.2.4 (0621621/2547958):
 Size: c. 5 m diameter
 Structures:
 The site consists of only one isolated cairn with brownish-black stones and white creamy
@@ -1320,7 +1320,7 @@ The structure is around
 (0609308/2539501).
 Finds:
 No finds
-Khuwisi CS.2.13 (060936112539968):
+Khuwisi CS.2.13 (0609361/2539968):
 Size: '1
 Structures:
 It includes one possible stone structure of semi-circular shape. It is hardly distinguishable
@@ -1401,7 +1401,7 @@ The site consists of a group of piled stones around 60 cm to 80 cm in diameter a
 and with a one course stone alignment.
 Finds:
 No finds
-Jebel Qard CS.2.20:
+Jebel Qard CS.2.20 (0612629/2542542):
 Size: 1.0075 ha.
 Structures:
 This is a major Late Iron Age site that consists of a group of circular, rectangular and
@@ -1434,7 +1434,7 @@ Qard also yielded signs of circular stone structures around 80 cm to 1 m in diam
 they are hardly distinguishable.
 Finds:
 No finds
-Jebel Qard CS.2.23 (0613667/25~3734):
+Jebel Qard CS.2.23 (0613667/2543734):
 Size: 0 ..34 ha.
 Structures:
 Here are six stone circular structures with double-skin walls of brown and black stones
@@ -1511,7 +1511,7 @@ around 2 m in diameter that are built on a black gravel wadi terrace.
 Finds:
 The surface of the site yielded a large number of Late Iron Age pottery sherds in which
 224 were collected.
-Jebel Qard CS.2.30 (061346112543915):
+Jebel Qard CS.2.30 (0613461/2543915):
 Size: 0.0875 ha.
 Structures:
 The site includes three stone plies around 1 m in diameter and 15 cm high. They are built
@@ -1774,7 +1774,7 @@ gravel in the middle. The site also yielded two stone plies around 1 m in diamet
 base.
 Finds:
 No finds
-Mahleya CS.2.50 (060481112532027 & 0605047/2533797), Figures 61-62:
+Mahleya CS.2.50 (0604811/2532027 & 0605047/2533797), Figures 61-62:
 Size: 94 ha.
 Structures:
 This is the area between the east bank of Wadi Mahram and the west bank of Wadi
@@ -1783,7 +1783,7 @@ of tombs, both Islamic and pre-Islamic, on a black gravel wadi terrace. The majo
 them are pre-Islamic of the Late Iron Age Mahleya type, and of different sizes. The site
 was divided into five areas:
 CS.2.50.1 (0604852/2533112): This is a cemetery with Iron Age tombs of the Mahleya
-type. They have \n oval shape with a one-course stone alignment and some piled stones on
+type. They have an oval shape with a one-course stone alignment and some piled stones on
 the top with gravel (Plates 119-121; Figure 63). Their size ranges from 1 m to :2.5 m long
 and from 1 m to 1.8 m wide. They are over 500 tombs. In January 2004. a joint team from
 510the Department of Archaeology at Sultan Qaboos University and the Ministr) of Heritage
@@ -1849,7 +1849,7 @@ Early Iron Age, 76 Late Iron Age, three Middle-Islamic. two LateIslamic sherds b
 those from tombs such as Tomb 1 that yielded 12 Early Iron Age sherds, and Tomb which yielded one Umm an-Nar, three Early Iron Age and four Middle Islamic sherds.
 Moreover, Area three (CS.2.50.3) yielded only four Late Iron Age. while Area five
 (CS.2.50.5) yielded 28 Middle Islamic and 25 Late Islamic sherds.
-Mahleya CS.2.51 (060465112533201), Figure 66:
+Mahleya CS.2.51 (0604651/2533201), Figure 66:
 Size: 28.5 ha.
 Structures:
 This is the area located between the west bank of Wadi Mahram, which separates it from
@@ -2227,7 +2227,7 @@ are around 1.5 m to 3 m long and 1 m to 1.20 m wide, and filled with gravel. The
 north-south orientation.
 Finds:
 No finds
-Khadra Bani Dafa'a CS.2.67 (060260612524536):
+Khadra Bani Dafa'a CS.2.67 (0602606/2524536):
 Size: 19.25 ha.
 Structures:
 This is the area located north Khadra Bani Dafa'a that includes seven intact and collapsed
@@ -2268,7 +2268,7 @@ fragments (W.D.I42 & W.O.143; Plate 117 & Figure 57), a bead (W.O.144) and shell
 mm wide and 43 mm long and c.3 mm to 8mm deep. The diameter of the bowl at its rim is
 c.135 mm and at the base it is 70 mm. Depth is c. 54 mm. It includes incised decoration of
 horizontal lines around the rim and two above the base.
-Khadra Bani Dafa'a CS.2.68 (060090112524906):
+Khadra Bani Dafa'a CS.2.68 (0600901/2524906):
 Size: 10.5 ha.
 Structures:
 This is the area located west of Khadra Bani Oafa'a and north of the main asphalt road
