@@ -580,6 +580,47 @@ def load_plates(db_path: Path, plates_jsonl: Path, raw_plates_dir: Path, project
             upsert_plate(con, p)
 
 
+def _find_site_ids(con, code: str) -> list[int]:
+    """
+    Resolve a site code to one or more site IDs, with three-step fallback:
+
+    1. Exact match: "CS.5.10" -> [id]
+    2. Prefix expansion: "CS.5" (bare CS.X) -> all CS.5.* site ids
+    3. Parent walk: "CS.5.1.2.1" not found -> try "CS.5.1.2" -> "CS.5.1" -> ...
+       At each level also tries prefix expansion if the shortened code is a bare CS.X.
+
+    This ensures that captions referencing sub-sites (e.g. CS.5.2.1) or bare area
+    codes (CS.5) still get linked to the nearest matching ancestor in the DB.
+    """
+    code = code.upper().strip()
+
+    # 1) Exact match
+    row = con.execute("SELECT id FROM site WHERE code = ?", (code,)).fetchone()
+    if row:
+        return [int(row["id"])]
+
+    # 2) Bare prefix (CS.X) -> expand to all CS.X.*
+    if CS_PREFIX_ONLY.match(code):
+        rows = con.execute("SELECT id FROM site WHERE code LIKE ?", (f"{code}.%",)).fetchall()
+        return [int(r["id"]) for r in rows]
+
+    # 3) Parent walk: strip trailing sub-number and retry
+    parts = code.split(".")
+    while len(parts) > 2:  # minimum: ["CS", "X"]
+        parts = parts[:-1]
+        parent = ".".join(parts)
+        row = con.execute("SELECT id FROM site WHERE code = ?", (parent,)).fetchone()
+        if row:
+            return [int(row["id"])]
+        # bare prefix at this level
+        if CS_PREFIX_ONLY.match(parent):
+            rows = con.execute("SELECT id FROM site WHERE code LIKE ?", (f"{parent}.%",)).fetchall()
+            if rows:
+                return [int(r["id"]) for r in rows]
+
+    return []
+
+
 def load_site_map_links(db_path: Path, links_jsonl: Path) -> None:
     links = read_jsonl(links_jsonl)
     with connect(db_path) as con:
@@ -592,56 +633,45 @@ def load_site_map_links(db_path: Path, links_jsonl: Path) -> None:
                 continue
             map_id = int(mp["id"])
 
-            # 1) Direct match (CS.1.1 etc.)
-            site = con.execute("SELECT id FROM site WHERE code = ?", (raw_code,)).fetchone()
-            if site:
+            for site_id in _find_site_ids(con, raw_code):
                 con.execute(
                     "INSERT OR IGNORE INTO site_map (site_id, map_id) VALUES (?, ?)",
-                    (int(site["id"]), map_id),
+                    (site_id, map_id),
                 )
-                continue
-
-            # 2) Prefix expansion (CS.1 -> all CS.1.*)
-            if CS_PREFIX_ONLY.match(raw_code):
-                like = f"{raw_code}.%"
-                rows = con.execute("SELECT id FROM site WHERE code LIKE ?", (like,)).fetchall()
-                for r in rows:
-                    con.execute(
-                        "INSERT OR IGNORE INTO site_map (site_id, map_id) VALUES (?, ?)",
-                        (int(r["id"]), map_id),
-                    )
 
 
 def load_site_plate_links(db_path: Path, links_jsonl: Path) -> None:
     links = read_jsonl(links_jsonl)
     with connect(db_path) as con:
         for link in links:
-            site = con.execute("SELECT id FROM site WHERE code = ?", (link["site_code"],)).fetchone()
+            raw_code = link["site_code"].upper().strip()
             pl = con.execute("SELECT id FROM plate WHERE number = ?", (link["plate_number"],)).fetchone()
-            if not site or not pl:
+            if not pl:
                 continue
-            con.execute(
-                "INSERT OR IGNORE INTO site_plate (site_id, plate_id) VALUES (?, ?)",
-                (int(site["id"]), int(pl["id"])),
-            )
-            
+            plate_id = int(pl["id"])
+
+            for site_id in _find_site_ids(con, raw_code):
+                con.execute(
+                    "INSERT OR IGNORE INTO site_plate (site_id, plate_id) VALUES (?, ?)",
+                    (site_id, plate_id),
+                )
+
 
 def load_site_figure_links(db_path: Path, links_jsonl: Path) -> None:
     links = read_jsonl(links_jsonl)
     with connect(db_path) as con:
         for link in links:
-            site = con.execute("SELECT id FROM site WHERE code = ?", (link["site_code"],)).fetchone()
+            raw_code = link["site_code"].upper().strip()
             fig = con.execute("SELECT id FROM figure WHERE number = ?", (link["figure_number"],)).fetchone()
-            if not site or not fig:
-                # site may not exist yet, or figure not loaded; skip silently for now
+            if not fig:
                 continue
-            con.execute(
-                """
-                INSERT OR IGNORE INTO site_figure (site_id, figure_id)
-                VALUES (?, ?)
-                """,
-                (int(site["id"]), int(fig["id"])),
-            )
+            fig_id = int(fig["id"])
+
+            for site_id in _find_site_ids(con, raw_code):
+                con.execute(
+                    "INSERT OR IGNORE INTO site_figure (site_id, figure_id) VALUES (?, ?)",
+                    (site_id, fig_id),
+                )
 
 def _split_sites_field(sites_field: str | None) -> list[str]:
     if not sites_field:
