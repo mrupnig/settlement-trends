@@ -6,7 +6,9 @@ readme = "README.md"
 requires-python = ">=3.13,<3.14"
 dependencies = [
     "beautifulsoup4>=4.14.3",
+    "eralchemy>=1.6.0",
     "folium>=0.20.0",
+    "graphviz>=0.21",
     "html5lib>=1.1",
     "lxml>=6.0.2",
     "numpy>=2.2.6",
