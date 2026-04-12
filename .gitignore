@@ -8,11 +8,17 @@ wheels/
 
 # Virtual environments
 .venv
+
+# folders and files to ignore
 data/paper/
 protocol/
 pages/
-notebooks/
+src/classification/run.txt
+schema/
 
 data_query.py
+main.py
 
 tex/
+
+PROTOCOL.md
